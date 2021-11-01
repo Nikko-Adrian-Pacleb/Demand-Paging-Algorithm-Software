@@ -103,13 +103,14 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal8;
 	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal9;
 
-		 //--!!--
-		//Array Label Process
+		   //--!!--
+		  //Array Label Process
 	private: array<System::Windows::Forms::Label^>^ processLabel;
 	private: array<System::Windows::Forms::Label^>^ blocksLabel;
 	private: array<System::Windows::Forms::NumericUpDown^>^ processNUD;
 	private: array<System::Windows::Forms::NumericUpDown^>^ blocksNUD;
 	private: System::Windows::Forms::Button^ backToMenuButton;
+	private: System::Windows::Forms::Panel^ creditsPanel;
 
 
 
@@ -119,7 +120,7 @@ namespace DemandPagingAlgorithm {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -192,6 +193,7 @@ namespace DemandPagingAlgorithm {
 			this->Choice = (gcnew System::Windows::Forms::Label());
 			this->NUPNOProcess = (gcnew System::Windows::Forms::NumericUpDown());
 			this->NUPNOBlocks = (gcnew System::Windows::Forms::NumericUpDown());
+			this->creditsPanel = (gcnew System::Windows::Forms::Panel());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->ChoicesPanel->SuspendLayout();
 			this->InElemPanel->SuspendLayout();
@@ -322,6 +324,7 @@ namespace DemandPagingAlgorithm {
 			this->Exit->TabIndex = 0;
 			this->Exit->Text = L"Exit";
 			this->Exit->UseVisualStyleBackColor = true;
+			this->Exit->Click += gcnew System::EventHandler(this, &DPAS::Exit_Click);
 			// 
 			// label1
 			// 
@@ -361,6 +364,7 @@ namespace DemandPagingAlgorithm {
 			// 
 			// InElemPanel
 			// 
+			this->InElemPanel->AutoScroll = true;
 			this->InElemPanel->Controls->Add(this->backToMenuButton);
 			this->InElemPanel->Controls->Add(this->startAlgoButton);
 			this->InElemPanel->Controls->Add(this->flowLayoutPanel4);
@@ -368,9 +372,9 @@ namespace DemandPagingAlgorithm {
 			this->InElemPanel->Controls->Add(this->flowLayoutPanel2);
 			this->InElemPanel->Controls->Add(this->flowLayoutPanel1);
 			this->InElemPanel->Controls->Add(this->tableLayoutPanel2);
-			this->InElemPanel->Location = System::Drawing::Point(0, 0);
+			this->InElemPanel->Location = System::Drawing::Point(765, 803);
 			this->InElemPanel->Name = L"InElemPanel";
-			this->InElemPanel->Size = System::Drawing::Size(984, 961);
+			this->InElemPanel->Size = System::Drawing::Size(219, 158);
 			this->InElemPanel->TabIndex = 5;
 			this->InElemPanel->Visible = false;
 			// 
@@ -959,14 +963,14 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel2->RowCount = 1;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(984, 134);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(954, 134);
 			this->tableLayoutPanel2->TabIndex = 0;
 			// 
 			// label5
 			// 
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(188, 55);
+			this->label5->Location = System::Drawing::Point(174, 55);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(123, 23);
 			this->label5->TabIndex = 0;
@@ -977,7 +981,7 @@ namespace DemandPagingAlgorithm {
 			// 
 			this->label6->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(683, 55);
+			this->label6->Location = System::Drawing::Point(653, 55);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(113, 23);
 			this->label6->TabIndex = 0;
@@ -989,7 +993,7 @@ namespace DemandPagingAlgorithm {
 			this->Choice->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Choice->AutoSize = true;
 			this->Choice->Font = (gcnew System::Drawing::Font(L"Cambria", 20, System::Drawing::FontStyle::Bold));
-			this->Choice->Location = System::Drawing::Point(449, 51);
+			this->Choice->Location = System::Drawing::Point(427, 51);
 			this->Choice->Name = L"Choice";
 			this->Choice->Size = System::Drawing::Size(96, 32);
 			this->Choice->TabIndex = 1;
@@ -1017,10 +1021,19 @@ namespace DemandPagingAlgorithm {
 			this->NUPNOBlocks->TabIndex = 7;
 			this->NUPNOBlocks->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
 			// 
+			// creditsPanel
+			// 
+			this->creditsPanel->Location = System::Drawing::Point(456, 803);
+			this->creditsPanel->Name = L"creditsPanel";
+			this->creditsPanel->Size = System::Drawing::Size(224, 158);
+			this->creditsPanel->TabIndex = 8;
+			this->creditsPanel->Visible = false;
+			// 
 			// DPAS
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(984, 961);
+			this->Controls->Add(this->creditsPanel);
 			this->Controls->Add(this->InElemPanel);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -1076,93 +1089,99 @@ namespace DemandPagingAlgorithm {
 
 		}
 #pragma endregion
-	   //FIFO Chosen
-private: System::Void FIFO_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Choice->Text = "FIFO";
-	this->InElemPanel->Visible = true;
-	for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
-		this->processLabel[i]->Visible = true;
-		this->processNUD[i]->Visible = true;
+		//FIFO Chosen
+	private: System::Void FIFO_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Choice->Text = "FIFO";
+		this->InElemPanel->Visible = true;
+		for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
+			this->processLabel[i]->Visible = true;
+			this->processNUD[i]->Visible = true;
+		}
+		for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
+			this->blocksLabel[i]->Visible = true;
+			this->blocksNUD[i]->Visible = true;
+		}
 	}
-	for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
-		this->blocksLabel[i]->Visible = true;
-		this->blocksNUD[i]->Visible = true;
+		   //Best Fit Chosen
+	private: System::Void BestFit_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Choice->Text = "Best Fit";
+		this->InElemPanel->Visible = true;
+		for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
+			this->processLabel[i]->Visible = true;
+			this->processNUD[i]->Visible = true;
+		}
+		for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
+			this->blocksLabel[i]->Visible = true;
+			this->blocksNUD[i]->Visible = true;
+		}
 	}
-}
-	   //Best Fit Chosen
-private: System::Void BestFit_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Choice->Text = "Best Fit";
-	this->InElemPanel->Visible = true;
-	for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
-		this->processLabel[i]->Visible = true;
-		this->processNUD[i]->Visible = true;
+
+	private: System::Void backToMenuButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->InElemPanel->Visible = false;
+		//Close all Label
+		for (int i = 0; i < 10; ++i) {
+			this->processLabel[i]->Visible = false;
+			this->processNUD[i]->Visible = false;
+			this->blocksLabel[i]->Visible = false;
+			this->blocksNUD[i]->Visible = false;
+		}
 	}
-	for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
-		this->blocksLabel[i]->Visible = true;
-		this->blocksNUD[i]->Visible = true;
+	//Exit the Software
+	private: System::Void Exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (MessageBox::Show("Are you sure you want to exit the program?", "Notice", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->Close();
+		}
+		
 	}
-}
 
-private: System::Void backToMenuButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->InElemPanel->Visible = false;
-	//Close all Label
-	for (int i = 0; i < 10; ++i) {
-		this->processLabel[i]->Visible = false;
-		this->processNUD[i]->Visible = false;
-		this->blocksLabel[i]->Visible = false;
-		this->blocksNUD[i]->Visible = false;
+	private: System::Void DPAS_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->processLabel = gcnew array<System::Windows::Forms::Label^>(10);
+		this->processLabel[0] = this->pl0;
+		this->processLabel[1] = this->pl1;
+		this->processLabel[2] = this->pl2;
+		this->processLabel[3] = this->pl3;
+		this->processLabel[4] = this->pl4;
+		this->processLabel[5] = this->pl5;
+		this->processLabel[6] = this->pl6;
+		this->processLabel[7] = this->pl7;
+		this->processLabel[8] = this->pl8;
+		this->processLabel[9] = this->pl9;
+
+		this->blocksLabel = gcnew array<System::Windows::Forms::Label^>(10);
+		this->blocksLabel[0] = this->bl0;
+		this->blocksLabel[1] = this->bl1;
+		this->blocksLabel[2] = this->bl2;
+		this->blocksLabel[3] = this->bl3;
+		this->blocksLabel[4] = this->bl4;
+		this->blocksLabel[5] = this->bl5;
+		this->blocksLabel[6] = this->bl6;
+		this->blocksLabel[7] = this->bl7;
+		this->blocksLabel[8] = this->bl8;
+		this->blocksLabel[9] = this->bl9;
+
+		this->processNUD = gcnew array<System::Windows::Forms::NumericUpDown^>(10);
+		this->processNUD[0] = this->NUDProcessVal0;
+		this->processNUD[1] = this->NUDProcessVal1;
+		this->processNUD[2] = this->NUDProcessVal2;
+		this->processNUD[3] = this->NUDProcessVal3;
+		this->processNUD[4] = this->NUDProcessVal4;
+		this->processNUD[5] = this->NUDProcessVal5;
+		this->processNUD[6] = this->NUDProcessVal6;
+		this->processNUD[7] = this->NUDProcessVal7;
+		this->processNUD[8] = this->NUDProcessVal8;
+		this->processNUD[9] = this->NUDProcessVal9;
+
+		this->blocksNUD = gcnew array<System::Windows::Forms::NumericUpDown^>(10);
+		this->blocksNUD[0] = this->NUDBlocksVal0;
+		this->blocksNUD[1] = this->NUDBlocksVal1;
+		this->blocksNUD[2] = this->NUDBlocksVal2;
+		this->blocksNUD[3] = this->NUDBlocksVal3;
+		this->blocksNUD[4] = this->NUDBlocksVal4;
+		this->blocksNUD[5] = this->NUDBlocksVal5;
+		this->blocksNUD[6] = this->NUDBlocksVal6;
+		this->blocksNUD[7] = this->NUDBlocksVal7;
+		this->blocksNUD[8] = this->NUDBlocksVal8;
+		this->blocksNUD[9] = this->NUDBlocksVal9;
 	}
-}
-
-private: System::Void DPAS_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->processLabel = gcnew array<System::Windows::Forms::Label^>(10);
-	this->processLabel[0] = this->pl0;
-	this->processLabel[1] = this->pl1;
-	this->processLabel[2] = this->pl2;
-	this->processLabel[3] = this->pl3;
-	this->processLabel[4] = this->pl4;
-	this->processLabel[5] = this->pl5;
-	this->processLabel[6] = this->pl6;
-	this->processLabel[7] = this->pl7;
-	this->processLabel[8] = this->pl8;
-	this->processLabel[9] = this->pl9;
-
-	this->blocksLabel = gcnew array<System::Windows::Forms::Label^>(10);
-	this->blocksLabel[0] = this->bl0;
-	this->blocksLabel[1] = this->bl1;
-	this->blocksLabel[2] = this->bl2;
-	this->blocksLabel[3] = this->bl3;
-	this->blocksLabel[4] = this->bl4;
-	this->blocksLabel[5] = this->bl5;
-	this->blocksLabel[6] = this->bl6;
-	this->blocksLabel[7] = this->bl7;
-	this->blocksLabel[8] = this->bl8;
-	this->blocksLabel[9] = this->bl9;
-
-	this->processNUD = gcnew array<System::Windows::Forms::NumericUpDown^>(10);
-	this->processNUD[0] = this->NUDProcessVal0;
-	this->processNUD[1] = this->NUDProcessVal1;
-	this->processNUD[2] = this->NUDProcessVal2;
-	this->processNUD[3] = this->NUDProcessVal3;
-	this->processNUD[4] = this->NUDProcessVal4;
-	this->processNUD[5] = this->NUDProcessVal5;
-	this->processNUD[6] = this->NUDProcessVal6;
-	this->processNUD[7] = this->NUDProcessVal7;
-	this->processNUD[8] = this->NUDProcessVal8;
-	this->processNUD[9] = this->NUDProcessVal9;
-
-	this->blocksNUD = gcnew array<System::Windows::Forms::NumericUpDown^>(10);
-	this->blocksNUD[0] = this->NUDBlocksVal0;
-	this->blocksNUD[1] = this->NUDBlocksVal1;
-	this->blocksNUD[2] = this->NUDBlocksVal2;
-	this->blocksNUD[3] = this->NUDBlocksVal3;
-	this->blocksNUD[4] = this->NUDBlocksVal4;
-	this->blocksNUD[5] = this->NUDBlocksVal5;
-	this->blocksNUD[6] = this->NUDBlocksVal6;
-	this->blocksNUD[7] = this->NUDBlocksVal7;
-	this->blocksNUD[8] = this->NUDBlocksVal8;
-	this->blocksNUD[9] = this->NUDBlocksVal9;
-}
-
-};
+	};
 }
