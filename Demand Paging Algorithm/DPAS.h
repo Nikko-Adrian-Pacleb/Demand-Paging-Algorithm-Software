@@ -48,35 +48,21 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ TBNOProcess;
-	private: System::Windows::Forms::TextBox^ TBNOBlocks;
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ FIFOInElemPanel;
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
-
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel2;
 	private: System::Windows::Forms::Label^ bl0;
 	private: System::Windows::Forms::Label^ bl1;
 	private: System::Windows::Forms::Label^ bl2;
-	private: System::Windows::Forms::Label^ lb3;
-	private: System::Windows::Forms::Label^ lb4;
-	private: System::Windows::Forms::Label^ lb5;
-	private: System::Windows::Forms::Label^ lb6;
-	private: System::Windows::Forms::Label^ lb7;
-	private: System::Windows::Forms::Label^ lb8;
-	private: System::Windows::Forms::Label^ lb9;
+	private: System::Windows::Forms::Label^ bl3;
+	private: System::Windows::Forms::Label^ bl4;
+	private: System::Windows::Forms::Label^ bl5;
+	private: System::Windows::Forms::Label^ bl6;
+	private: System::Windows::Forms::Label^ bl7;
+	private: System::Windows::Forms::Label^ bl8;
+	private: System::Windows::Forms::Label^ bl9;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 	private: System::Windows::Forms::Label^ pl0;
 	private: System::Windows::Forms::Label^ pl1;
@@ -89,49 +75,38 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::Label^ pl8;
 	private: System::Windows::Forms::Label^ pl9;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel3;
-	private: System::Windows::Forms::TextBox^ ptb0;
-	private: System::Windows::Forms::TextBox^ ptb1;
-	private: System::Windows::Forms::TextBox^ ptb2;
-	private: System::Windows::Forms::TextBox^ ptb3;
-	private: System::Windows::Forms::TextBox^ ptb4;
-	private: System::Windows::Forms::TextBox^ ptb5;
-	private: System::Windows::Forms::TextBox^ ptb6;
-	private: System::Windows::Forms::TextBox^ ptb7;
-	private: System::Windows::Forms::TextBox^ ptb8;
-	private: System::Windows::Forms::TextBox^ ptb9;
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel4;
-	private: System::Windows::Forms::TextBox^ btb0;
-	private: System::Windows::Forms::TextBox^ btb1;
-	private: System::Windows::Forms::TextBox^ btb2;
-	private: System::Windows::Forms::TextBox^ btb3;
-	private: System::Windows::Forms::TextBox^ btb4;
-	private: System::Windows::Forms::TextBox^ btb5;
-	private: System::Windows::Forms::TextBox^ btb6;
-	private: System::Windows::Forms::TextBox^ btb7;
-	private: System::Windows::Forms::TextBox^ btb8;
-	private: System::Windows::Forms::TextBox^ btb9;
 	private: System::Windows::Forms::Button^ ChangePl0;
+	private: System::Windows::Forms::Label^ Choice;
+	private: System::Windows::Forms::NumericUpDown^ NUPNOProcess;
+	private: System::Windows::Forms::NumericUpDown^ NUPNOBlocks;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal0;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal1;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal2;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal3;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal4;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal5;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal6;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal7;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal8;
+	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal9;
+	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel4;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal0;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal1;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal2;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal3;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal4;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal5;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal6;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal7;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal8;
+	private: System::Windows::Forms::NumericUpDown^ NUDBlocksVal9;
 
-	//--!!--
-	//Array Label Process
-	private: array<System::Windows::Forms::Label^> ^processLabel;
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		 //--!!--
+		//Array Label Process
+	private: array<System::Windows::Forms::Label^>^ processLabel;
+	private: array<System::Windows::Forms::Label^>^ blocksLabel;
+	private: array<System::Windows::Forms::NumericUpDown^>^ processNUD;
+	private: array<System::Windows::Forms::NumericUpDown^>^ blocksNUD;
 
 
 
@@ -161,45 +136,41 @@ namespace DemandPagingAlgorithm {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->TBNOProcess = (gcnew System::Windows::Forms::TextBox());
-			this->TBNOBlocks = (gcnew System::Windows::Forms::TextBox());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->FIFOInElemPanel = (gcnew System::Windows::Forms::Panel());
 			this->ChangePl0 = (gcnew System::Windows::Forms::Button());
 			this->flowLayoutPanel4 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->btb0 = (gcnew System::Windows::Forms::TextBox());
-			this->btb1 = (gcnew System::Windows::Forms::TextBox());
-			this->btb2 = (gcnew System::Windows::Forms::TextBox());
-			this->btb3 = (gcnew System::Windows::Forms::TextBox());
-			this->btb4 = (gcnew System::Windows::Forms::TextBox());
-			this->btb5 = (gcnew System::Windows::Forms::TextBox());
-			this->btb6 = (gcnew System::Windows::Forms::TextBox());
-			this->btb7 = (gcnew System::Windows::Forms::TextBox());
-			this->btb8 = (gcnew System::Windows::Forms::TextBox());
-			this->btb9 = (gcnew System::Windows::Forms::TextBox());
+			this->NUDBlocksVal0 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal4 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal5 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal7 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal8 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDBlocksVal9 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->flowLayoutPanel3 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->ptb0 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb1 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb2 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb3 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb4 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb5 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb6 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb7 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb8 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb9 = (gcnew System::Windows::Forms::TextBox());
+			this->NUDProcessVal0 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal4 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal5 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal7 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal8 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUDProcessVal9 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->flowLayoutPanel2 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->bl0 = (gcnew System::Windows::Forms::Label());
 			this->bl1 = (gcnew System::Windows::Forms::Label());
 			this->bl2 = (gcnew System::Windows::Forms::Label());
-			this->lb3 = (gcnew System::Windows::Forms::Label());
-			this->lb4 = (gcnew System::Windows::Forms::Label());
-			this->lb5 = (gcnew System::Windows::Forms::Label());
-			this->lb6 = (gcnew System::Windows::Forms::Label());
-			this->lb7 = (gcnew System::Windows::Forms::Label());
-			this->lb8 = (gcnew System::Windows::Forms::Label());
-			this->lb9 = (gcnew System::Windows::Forms::Label());
+			this->bl3 = (gcnew System::Windows::Forms::Label());
+			this->bl4 = (gcnew System::Windows::Forms::Label());
+			this->bl5 = (gcnew System::Windows::Forms::Label());
+			this->bl6 = (gcnew System::Windows::Forms::Label());
+			this->bl7 = (gcnew System::Windows::Forms::Label());
+			this->bl8 = (gcnew System::Windows::Forms::Label());
+			this->bl9 = (gcnew System::Windows::Forms::Label());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->pl0 = (gcnew System::Windows::Forms::Label());
 			this->pl1 = (gcnew System::Windows::Forms::Label());
@@ -214,14 +185,39 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->Choice = (gcnew System::Windows::Forms::Label());
+			this->NUPNOProcess = (gcnew System::Windows::Forms::NumericUpDown());
+			this->NUPNOBlocks = (gcnew System::Windows::Forms::NumericUpDown());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->ChoicesPanel->SuspendLayout();
 			this->FIFOInElemPanel->SuspendLayout();
 			this->flowLayoutPanel4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal0))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal9))->BeginInit();
 			this->flowLayoutPanel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal0))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal9))->BeginInit();
 			this->flowLayoutPanel2->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOProcess))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOBlocks))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -285,8 +281,9 @@ namespace DemandPagingAlgorithm {
 			this->FIFO->Name = L"FIFO";
 			this->FIFO->Size = System::Drawing::Size(202, 71);
 			this->FIFO->TabIndex = 0;
-			this->FIFO->Text = L"Text";
+			this->FIFO->Text = L"FIFO";
 			this->FIFO->UseVisualStyleBackColor = true;
+			this->FIFO->Click += gcnew System::EventHandler(this, &DPAS::FIFO_Click);
 			// 
 			// BestFit
 			// 
@@ -298,6 +295,7 @@ namespace DemandPagingAlgorithm {
 			this->BestFit->TabIndex = 0;
 			this->BestFit->Text = L"Best Fit";
 			this->BestFit->UseVisualStyleBackColor = true;
+			this->BestFit->Click += gcnew System::EventHandler(this, &DPAS::BestFit_Click);
 			// 
 			// Credits
 			// 
@@ -357,36 +355,6 @@ namespace DemandPagingAlgorithm {
 			this->label4->TabIndex = 2;
 			this->label4->Text = L"4 - 10";
 			// 
-			// TBNOProcess
-			// 
-			this->TBNOProcess->Location = System::Drawing::Point(596, 221);
-			this->TBNOProcess->Name = L"TBNOProcess";
-			this->TBNOProcess->Size = System::Drawing::Size(42, 31);
-			this->TBNOProcess->TabIndex = 3;
-			// 
-			// TBNOBlocks
-			// 
-			this->TBNOBlocks->Location = System::Drawing::Point(596, 343);
-			this->TBNOBlocks->Name = L"TBNOBlocks";
-			this->TBNOBlocks->Size = System::Drawing::Size(42, 31);
-			this->TBNOBlocks->TabIndex = 3;
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->panel1->Location = System::Drawing::Point(595, 376);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(44, 10);
-			this->panel1->TabIndex = 4;
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->panel2->Location = System::Drawing::Point(596, 253);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(42, 10);
-			this->panel2->TabIndex = 4;
-			// 
 			// FIFOInElemPanel
 			// 
 			this->FIFOInElemPanel->Controls->Add(this->ChangePl0);
@@ -399,6 +367,7 @@ namespace DemandPagingAlgorithm {
 			this->FIFOInElemPanel->Name = L"FIFOInElemPanel";
 			this->FIFOInElemPanel->Size = System::Drawing::Size(984, 961);
 			this->FIFOInElemPanel->TabIndex = 5;
+			this->FIFOInElemPanel->Visible = false;
 			// 
 			// ChangePl0
 			// 
@@ -412,220 +381,250 @@ namespace DemandPagingAlgorithm {
 			// 
 			// flowLayoutPanel4
 			// 
-			this->flowLayoutPanel4->Controls->Add(this->btb0);
-			this->flowLayoutPanel4->Controls->Add(this->btb1);
-			this->flowLayoutPanel4->Controls->Add(this->btb2);
-			this->flowLayoutPanel4->Controls->Add(this->btb3);
-			this->flowLayoutPanel4->Controls->Add(this->btb4);
-			this->flowLayoutPanel4->Controls->Add(this->btb5);
-			this->flowLayoutPanel4->Controls->Add(this->btb6);
-			this->flowLayoutPanel4->Controls->Add(this->btb7);
-			this->flowLayoutPanel4->Controls->Add(this->btb8);
-			this->flowLayoutPanel4->Controls->Add(this->btb9);
-			this->flowLayoutPanel4->Location = System::Drawing::Point(759, 140);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal0);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal1);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal2);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal3);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal4);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal5);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal6);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal7);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal8);
+			this->flowLayoutPanel4->Controls->Add(this->NUDBlocksVal9);
+			this->flowLayoutPanel4->Location = System::Drawing::Point(754, 140);
 			this->flowLayoutPanel4->Name = L"flowLayoutPanel4";
 			this->flowLayoutPanel4->Size = System::Drawing::Size(200, 699);
 			this->flowLayoutPanel4->TabIndex = 3;
 			// 
-			// btb0
+			// NUDBlocksVal0
 			// 
-			this->btb0->Location = System::Drawing::Point(3, 20);
-			this->btb0->Margin = System::Windows::Forms::Padding(3, 20, 3, 3);
-			this->btb0->Name = L"btb0";
-			this->btb0->Size = System::Drawing::Size(197, 31);
-			this->btb0->TabIndex = 0;
+			this->NUDBlocksVal0->Location = System::Drawing::Point(3, 14);
+			this->NUDBlocksVal0->Margin = System::Windows::Forms::Padding(3, 14, 3, 3);
+			this->NUDBlocksVal0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal0->Name = L"NUDBlocksVal0";
+			this->NUDBlocksVal0->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal0->TabIndex = 0;
+			this->NUDBlocksVal0->Visible = false;
 			// 
-			// btb1
+			// NUDBlocksVal1
 			// 
-			this->btb1->Location = System::Drawing::Point(3, 80);
-			this->btb1->Margin = System::Windows::Forms::Padding(3, 26, 3, 3);
-			this->btb1->Name = L"btb1";
-			this->btb1->Size = System::Drawing::Size(197, 31);
-			this->btb1->TabIndex = 0;
+			this->NUDBlocksVal1->Location = System::Drawing::Point(3, 78);
+			this->NUDBlocksVal1->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDBlocksVal1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal1->Name = L"NUDBlocksVal1";
+			this->NUDBlocksVal1->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal1->TabIndex = 0;
+			this->NUDBlocksVal1->Visible = false;
 			// 
-			// btb2
+			// NUDBlocksVal2
 			// 
-			this->btb2->Location = System::Drawing::Point(3, 144);
-			this->btb2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btb2->Name = L"btb2";
-			this->btb2->Size = System::Drawing::Size(197, 31);
-			this->btb2->TabIndex = 0;
+			this->NUDBlocksVal2->Location = System::Drawing::Point(3, 142);
+			this->NUDBlocksVal2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDBlocksVal2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal2->Name = L"NUDBlocksVal2";
+			this->NUDBlocksVal2->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal2->TabIndex = 0;
+			this->NUDBlocksVal2->Visible = false;
 			// 
-			// btb3
+			// NUDBlocksVal3
 			// 
-			this->btb3->Location = System::Drawing::Point(3, 208);
-			this->btb3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btb3->Name = L"btb3";
-			this->btb3->Size = System::Drawing::Size(197, 31);
-			this->btb3->TabIndex = 0;
+			this->NUDBlocksVal3->Location = System::Drawing::Point(3, 206);
+			this->NUDBlocksVal3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDBlocksVal3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal3->Name = L"NUDBlocksVal3";
+			this->NUDBlocksVal3->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal3->TabIndex = 0;
+			this->NUDBlocksVal3->Visible = false;
 			// 
-			// btb4
+			// NUDBlocksVal4
 			// 
-			this->btb4->Location = System::Drawing::Point(3, 272);
-			this->btb4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btb4->Name = L"btb4";
-			this->btb4->Size = System::Drawing::Size(197, 31);
-			this->btb4->TabIndex = 0;
+			this->NUDBlocksVal4->Location = System::Drawing::Point(3, 270);
+			this->NUDBlocksVal4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDBlocksVal4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal4->Name = L"NUDBlocksVal4";
+			this->NUDBlocksVal4->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal4->TabIndex = 0;
+			this->NUDBlocksVal4->Visible = false;
 			// 
-			// btb5
+			// NUDBlocksVal5
 			// 
-			this->btb5->Location = System::Drawing::Point(3, 334);
-			this->btb5->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb5->Name = L"btb5";
-			this->btb5->Size = System::Drawing::Size(197, 31);
-			this->btb5->TabIndex = 0;
-			this->btb5->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDBlocksVal5->Location = System::Drawing::Point(3, 334);
+			this->NUDBlocksVal5->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDBlocksVal5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal5->Name = L"NUDBlocksVal5";
+			this->NUDBlocksVal5->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal5->TabIndex = 0;
+			this->NUDBlocksVal5->Visible = false;
 			// 
-			// btb6
+			// NUDBlocksVal6
 			// 
-			this->btb6->Location = System::Drawing::Point(3, 396);
-			this->btb6->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb6->Name = L"btb6";
-			this->btb6->Size = System::Drawing::Size(197, 31);
-			this->btb6->TabIndex = 0;
-			this->btb6->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDBlocksVal6->Location = System::Drawing::Point(3, 397);
+			this->NUDBlocksVal6->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDBlocksVal6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal6->Name = L"NUDBlocksVal6";
+			this->NUDBlocksVal6->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal6->TabIndex = 0;
+			this->NUDBlocksVal6->Visible = false;
 			// 
-			// btb7
+			// NUDBlocksVal7
 			// 
-			this->btb7->Location = System::Drawing::Point(3, 458);
-			this->btb7->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb7->Name = L"btb7";
-			this->btb7->Size = System::Drawing::Size(197, 31);
-			this->btb7->TabIndex = 0;
-			this->btb7->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDBlocksVal7->Location = System::Drawing::Point(3, 460);
+			this->NUDBlocksVal7->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDBlocksVal7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal7->Name = L"NUDBlocksVal7";
+			this->NUDBlocksVal7->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal7->TabIndex = 0;
+			this->NUDBlocksVal7->Visible = false;
 			// 
-			// btb8
+			// NUDBlocksVal8
 			// 
-			this->btb8->Location = System::Drawing::Point(3, 520);
-			this->btb8->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb8->Name = L"btb8";
-			this->btb8->Size = System::Drawing::Size(197, 31);
-			this->btb8->TabIndex = 0;
-			this->btb8->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDBlocksVal8->Location = System::Drawing::Point(3, 523);
+			this->NUDBlocksVal8->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDBlocksVal8->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal8->Name = L"NUDBlocksVal8";
+			this->NUDBlocksVal8->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal8->TabIndex = 0;
+			this->NUDBlocksVal8->Visible = false;
 			// 
-			// btb9
+			// NUDBlocksVal9
 			// 
-			this->btb9->Location = System::Drawing::Point(3, 582);
-			this->btb9->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb9->Name = L"btb9";
-			this->btb9->Size = System::Drawing::Size(197, 31);
-			this->btb9->TabIndex = 0;
-			this->btb9->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDBlocksVal9->Location = System::Drawing::Point(3, 586);
+			this->NUDBlocksVal9->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDBlocksVal9->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal9->Name = L"NUDBlocksVal9";
+			this->NUDBlocksVal9->Size = System::Drawing::Size(197, 31);
+			this->NUDBlocksVal9->TabIndex = 0;
+			this->NUDBlocksVal9->Visible = false;
 			// 
 			// flowLayoutPanel3
 			// 
-			this->flowLayoutPanel3->Controls->Add(this->ptb0);
-			this->flowLayoutPanel3->Controls->Add(this->ptb1);
-			this->flowLayoutPanel3->Controls->Add(this->ptb2);
-			this->flowLayoutPanel3->Controls->Add(this->ptb3);
-			this->flowLayoutPanel3->Controls->Add(this->ptb4);
-			this->flowLayoutPanel3->Controls->Add(this->ptb5);
-			this->flowLayoutPanel3->Controls->Add(this->ptb6);
-			this->flowLayoutPanel3->Controls->Add(this->ptb7);
-			this->flowLayoutPanel3->Controls->Add(this->ptb8);
-			this->flowLayoutPanel3->Controls->Add(this->ptb9);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal0);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal1);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal2);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal3);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal4);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal5);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal6);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal7);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal8);
+			this->flowLayoutPanel3->Controls->Add(this->NUDProcessVal9);
 			this->flowLayoutPanel3->Location = System::Drawing::Point(263, 140);
 			this->flowLayoutPanel3->Name = L"flowLayoutPanel3";
 			this->flowLayoutPanel3->Size = System::Drawing::Size(200, 699);
 			this->flowLayoutPanel3->TabIndex = 3;
 			// 
-			// ptb0
+			// NUDProcessVal0
 			// 
-			this->ptb0->Location = System::Drawing::Point(3, 20);
-			this->ptb0->Margin = System::Windows::Forms::Padding(3, 20, 3, 3);
-			this->ptb0->Name = L"ptb0";
-			this->ptb0->Size = System::Drawing::Size(197, 31);
-			this->ptb0->TabIndex = 0;
+			this->NUDProcessVal0->Location = System::Drawing::Point(3, 14);
+			this->NUDProcessVal0->Margin = System::Windows::Forms::Padding(3, 14, 3, 3);
+			this->NUDProcessVal0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal0->Name = L"NUDProcessVal0";
+			this->NUDProcessVal0->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal0->TabIndex = 0;
+			this->NUDProcessVal0->Visible = false;
 			// 
-			// ptb1
+			// NUDProcessVal1
 			// 
-			this->ptb1->Location = System::Drawing::Point(3, 80);
-			this->ptb1->Margin = System::Windows::Forms::Padding(3, 26, 3, 3);
-			this->ptb1->Name = L"ptb1";
-			this->ptb1->Size = System::Drawing::Size(197, 31);
-			this->ptb1->TabIndex = 0;
+			this->NUDProcessVal1->Location = System::Drawing::Point(3, 78);
+			this->NUDProcessVal1->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDProcessVal1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal1->Name = L"NUDProcessVal1";
+			this->NUDProcessVal1->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal1->TabIndex = 0;
+			this->NUDProcessVal1->Visible = false;
 			// 
-			// ptb2
+			// NUDProcessVal2
 			// 
-			this->ptb2->Location = System::Drawing::Point(3, 144);
-			this->ptb2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->ptb2->Name = L"ptb2";
-			this->ptb2->Size = System::Drawing::Size(197, 31);
-			this->ptb2->TabIndex = 0;
+			this->NUDProcessVal2->Location = System::Drawing::Point(3, 142);
+			this->NUDProcessVal2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDProcessVal2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal2->Name = L"NUDProcessVal2";
+			this->NUDProcessVal2->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal2->TabIndex = 0;
+			this->NUDProcessVal2->Visible = false;
 			// 
-			// ptb3
+			// NUDProcessVal3
 			// 
-			this->ptb3->Location = System::Drawing::Point(3, 208);
-			this->ptb3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->ptb3->Name = L"ptb3";
-			this->ptb3->Size = System::Drawing::Size(197, 31);
-			this->ptb3->TabIndex = 0;
+			this->NUDProcessVal3->Location = System::Drawing::Point(3, 206);
+			this->NUDProcessVal3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDProcessVal3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal3->Name = L"NUDProcessVal3";
+			this->NUDProcessVal3->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal3->TabIndex = 0;
+			this->NUDProcessVal3->Visible = false;
 			// 
-			// ptb4
+			// NUDProcessVal4
 			// 
-			this->ptb4->Location = System::Drawing::Point(3, 272);
-			this->ptb4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->ptb4->Name = L"ptb4";
-			this->ptb4->Size = System::Drawing::Size(197, 31);
-			this->ptb4->TabIndex = 0;
+			this->NUDProcessVal4->Location = System::Drawing::Point(3, 270);
+			this->NUDProcessVal4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDProcessVal4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal4->Name = L"NUDProcessVal4";
+			this->NUDProcessVal4->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal4->TabIndex = 0;
+			this->NUDProcessVal4->Visible = false;
 			// 
-			// ptb5
+			// NUDProcessVal5
 			// 
-			this->ptb5->Location = System::Drawing::Point(3, 334);
-			this->ptb5->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb5->Name = L"ptb5";
-			this->ptb5->Size = System::Drawing::Size(197, 31);
-			this->ptb5->TabIndex = 0;
-			this->ptb5->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDProcessVal5->Location = System::Drawing::Point(3, 334);
+			this->NUDProcessVal5->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->NUDProcessVal5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal5->Name = L"NUDProcessVal5";
+			this->NUDProcessVal5->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal5->TabIndex = 0;
+			this->NUDProcessVal5->Visible = false;
 			// 
-			// ptb6
+			// NUDProcessVal6
 			// 
-			this->ptb6->Location = System::Drawing::Point(3, 396);
-			this->ptb6->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb6->Name = L"ptb6";
-			this->ptb6->Size = System::Drawing::Size(197, 31);
-			this->ptb6->TabIndex = 0;
-			this->ptb6->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDProcessVal6->Location = System::Drawing::Point(3, 397);
+			this->NUDProcessVal6->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDProcessVal6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal6->Name = L"NUDProcessVal6";
+			this->NUDProcessVal6->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal6->TabIndex = 0;
+			this->NUDProcessVal6->Visible = false;
 			// 
-			// ptb7
+			// NUDProcessVal7
 			// 
-			this->ptb7->Location = System::Drawing::Point(3, 458);
-			this->ptb7->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb7->Name = L"ptb7";
-			this->ptb7->Size = System::Drawing::Size(197, 31);
-			this->ptb7->TabIndex = 0;
-			this->ptb7->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDProcessVal7->Location = System::Drawing::Point(3, 460);
+			this->NUDProcessVal7->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDProcessVal7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal7->Name = L"NUDProcessVal7";
+			this->NUDProcessVal7->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal7->TabIndex = 0;
+			this->NUDProcessVal7->Visible = false;
 			// 
-			// ptb8
+			// NUDProcessVal8
 			// 
-			this->ptb8->Location = System::Drawing::Point(3, 520);
-			this->ptb8->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb8->Name = L"ptb8";
-			this->ptb8->Size = System::Drawing::Size(197, 31);
-			this->ptb8->TabIndex = 0;
-			this->ptb8->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDProcessVal8->Location = System::Drawing::Point(3, 523);
+			this->NUDProcessVal8->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDProcessVal8->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal8->Name = L"NUDProcessVal8";
+			this->NUDProcessVal8->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal8->TabIndex = 0;
+			this->NUDProcessVal8->Visible = false;
 			// 
-			// ptb9
+			// NUDProcessVal9
 			// 
-			this->ptb9->Location = System::Drawing::Point(3, 582);
-			this->ptb9->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb9->Name = L"ptb9";
-			this->ptb9->Size = System::Drawing::Size(197, 31);
-			this->ptb9->TabIndex = 0;
-			this->ptb9->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			this->NUDProcessVal9->Location = System::Drawing::Point(3, 586);
+			this->NUDProcessVal9->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
+			this->NUDProcessVal9->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal9->Name = L"NUDProcessVal9";
+			this->NUDProcessVal9->Size = System::Drawing::Size(197, 31);
+			this->NUDProcessVal9->TabIndex = 0;
+			this->NUDProcessVal9->Visible = false;
 			// 
 			// flowLayoutPanel2
 			// 
 			this->flowLayoutPanel2->Controls->Add(this->bl0);
 			this->flowLayoutPanel2->Controls->Add(this->bl1);
 			this->flowLayoutPanel2->Controls->Add(this->bl2);
-			this->flowLayoutPanel2->Controls->Add(this->lb3);
-			this->flowLayoutPanel2->Controls->Add(this->lb4);
-			this->flowLayoutPanel2->Controls->Add(this->lb5);
-			this->flowLayoutPanel2->Controls->Add(this->lb6);
-			this->flowLayoutPanel2->Controls->Add(this->lb7);
-			this->flowLayoutPanel2->Controls->Add(this->lb8);
-			this->flowLayoutPanel2->Controls->Add(this->lb9);
+			this->flowLayoutPanel2->Controls->Add(this->bl3);
+			this->flowLayoutPanel2->Controls->Add(this->bl4);
+			this->flowLayoutPanel2->Controls->Add(this->bl5);
+			this->flowLayoutPanel2->Controls->Add(this->bl6);
+			this->flowLayoutPanel2->Controls->Add(this->bl7);
+			this->flowLayoutPanel2->Controls->Add(this->bl8);
+			this->flowLayoutPanel2->Controls->Add(this->bl9);
 			this->flowLayoutPanel2->Location = System::Drawing::Point(511, 140);
 			this->flowLayoutPanel2->Name = L"flowLayoutPanel2";
 			this->flowLayoutPanel2->Size = System::Drawing::Size(220, 699);
@@ -641,6 +640,7 @@ namespace DemandPagingAlgorithm {
 			this->bl0->Size = System::Drawing::Size(181, 63);
 			this->bl0->TabIndex = 3;
 			this->bl0->Text = L"Blocks List #1:";
+			this->bl0->Visible = false;
 			// 
 			// bl1
 			// 
@@ -652,6 +652,7 @@ namespace DemandPagingAlgorithm {
 			this->bl1->Size = System::Drawing::Size(181, 63);
 			this->bl1->TabIndex = 3;
 			this->bl1->Text = L"Blocks List #2:";
+			this->bl1->Visible = false;
 			// 
 			// bl2
 			// 
@@ -663,83 +664,91 @@ namespace DemandPagingAlgorithm {
 			this->bl2->Size = System::Drawing::Size(181, 63);
 			this->bl2->TabIndex = 3;
 			this->bl2->Text = L"Blocks List #3:";
+			this->bl2->Visible = false;
 			// 
-			// lb3
+			// bl3
 			// 
-			this->lb3->AutoSize = true;
-			this->lb3->BackColor = System::Drawing::Color::Transparent;
-			this->lb3->Location = System::Drawing::Point(3, 189);
-			this->lb3->Name = L"lb3";
-			this->lb3->Padding = System::Windows::Forms::Padding(20);
-			this->lb3->Size = System::Drawing::Size(181, 63);
-			this->lb3->TabIndex = 3;
-			this->lb3->Text = L"Blocks List #4:";
+			this->bl3->AutoSize = true;
+			this->bl3->BackColor = System::Drawing::Color::Transparent;
+			this->bl3->Location = System::Drawing::Point(3, 189);
+			this->bl3->Name = L"bl3";
+			this->bl3->Padding = System::Windows::Forms::Padding(20);
+			this->bl3->Size = System::Drawing::Size(181, 63);
+			this->bl3->TabIndex = 3;
+			this->bl3->Text = L"Blocks List #4:";
+			this->bl3->Visible = false;
 			// 
-			// lb4
+			// bl4
 			// 
-			this->lb4->AutoSize = true;
-			this->lb4->BackColor = System::Drawing::Color::Transparent;
-			this->lb4->Location = System::Drawing::Point(3, 252);
-			this->lb4->Name = L"lb4";
-			this->lb4->Padding = System::Windows::Forms::Padding(20);
-			this->lb4->Size = System::Drawing::Size(181, 63);
-			this->lb4->TabIndex = 3;
-			this->lb4->Text = L"Blocks List #5:";
+			this->bl4->AutoSize = true;
+			this->bl4->BackColor = System::Drawing::Color::Transparent;
+			this->bl4->Location = System::Drawing::Point(3, 252);
+			this->bl4->Name = L"bl4";
+			this->bl4->Padding = System::Windows::Forms::Padding(20);
+			this->bl4->Size = System::Drawing::Size(181, 63);
+			this->bl4->TabIndex = 3;
+			this->bl4->Text = L"Blocks List #5:";
+			this->bl4->Visible = false;
 			// 
-			// lb5
+			// bl5
 			// 
-			this->lb5->AutoSize = true;
-			this->lb5->BackColor = System::Drawing::Color::Transparent;
-			this->lb5->Location = System::Drawing::Point(3, 315);
-			this->lb5->Name = L"lb5";
-			this->lb5->Padding = System::Windows::Forms::Padding(20);
-			this->lb5->Size = System::Drawing::Size(181, 63);
-			this->lb5->TabIndex = 3;
-			this->lb5->Text = L"Blocks List #6:";
+			this->bl5->AutoSize = true;
+			this->bl5->BackColor = System::Drawing::Color::Transparent;
+			this->bl5->Location = System::Drawing::Point(3, 315);
+			this->bl5->Name = L"bl5";
+			this->bl5->Padding = System::Windows::Forms::Padding(20);
+			this->bl5->Size = System::Drawing::Size(181, 63);
+			this->bl5->TabIndex = 3;
+			this->bl5->Text = L"Blocks List #6:";
+			this->bl5->Visible = false;
 			// 
-			// lb6
+			// bl6
 			// 
-			this->lb6->AutoSize = true;
-			this->lb6->BackColor = System::Drawing::Color::Transparent;
-			this->lb6->Location = System::Drawing::Point(3, 378);
-			this->lb6->Name = L"lb6";
-			this->lb6->Padding = System::Windows::Forms::Padding(20);
-			this->lb6->Size = System::Drawing::Size(181, 63);
-			this->lb6->TabIndex = 3;
-			this->lb6->Text = L"Blocks List #7:";
+			this->bl6->AutoSize = true;
+			this->bl6->BackColor = System::Drawing::Color::Transparent;
+			this->bl6->Location = System::Drawing::Point(3, 378);
+			this->bl6->Name = L"bl6";
+			this->bl6->Padding = System::Windows::Forms::Padding(20);
+			this->bl6->Size = System::Drawing::Size(181, 63);
+			this->bl6->TabIndex = 3;
+			this->bl6->Text = L"Blocks List #7:";
+			this->bl6->Visible = false;
 			// 
-			// lb7
+			// bl7
 			// 
-			this->lb7->AutoSize = true;
-			this->lb7->BackColor = System::Drawing::Color::Transparent;
-			this->lb7->Location = System::Drawing::Point(3, 441);
-			this->lb7->Name = L"lb7";
-			this->lb7->Padding = System::Windows::Forms::Padding(20);
-			this->lb7->Size = System::Drawing::Size(181, 63);
-			this->lb7->TabIndex = 3;
-			this->lb7->Text = L"Blocks List #8:";
+			this->bl7->AutoSize = true;
+			this->bl7->BackColor = System::Drawing::Color::Transparent;
+			this->bl7->Location = System::Drawing::Point(3, 441);
+			this->bl7->Name = L"bl7";
+			this->bl7->Padding = System::Windows::Forms::Padding(20);
+			this->bl7->Size = System::Drawing::Size(181, 63);
+			this->bl7->TabIndex = 3;
+			this->bl7->Text = L"Blocks List #8:";
+			this->bl7->Visible = false;
 			// 
-			// lb8
+			// bl8
 			// 
-			this->lb8->AutoSize = true;
-			this->lb8->BackColor = System::Drawing::Color::Transparent;
-			this->lb8->Location = System::Drawing::Point(3, 504);
-			this->lb8->Name = L"lb8";
-			this->lb8->Padding = System::Windows::Forms::Padding(20);
-			this->lb8->Size = System::Drawing::Size(181, 63);
-			this->lb8->TabIndex = 3;
-			this->lb8->Text = L"Blocks List #9:";
+			this->bl8->AutoSize = true;
+			this->bl8->BackColor = System::Drawing::Color::Transparent;
+			this->bl8->Location = System::Drawing::Point(3, 504);
+			this->bl8->Name = L"bl8";
+			this->bl8->Padding = System::Windows::Forms::Padding(20);
+			this->bl8->Size = System::Drawing::Size(181, 63);
+			this->bl8->TabIndex = 3;
+			this->bl8->Text = L"Blocks List #9:";
+			this->bl8->Visible = false;
 			// 
-			// lb9
+			// bl9
 			// 
-			this->lb9->AutoSize = true;
-			this->lb9->BackColor = System::Drawing::Color::Transparent;
-			this->lb9->Location = System::Drawing::Point(3, 567);
-			this->lb9->Name = L"lb9";
-			this->lb9->Padding = System::Windows::Forms::Padding(20);
-			this->lb9->Size = System::Drawing::Size(193, 63);
-			this->lb9->TabIndex = 3;
-			this->lb9->Text = L"Blocks List #10:";
+			this->bl9->AutoSize = true;
+			this->bl9->BackColor = System::Drawing::Color::Transparent;
+			this->bl9->Location = System::Drawing::Point(3, 567);
+			this->bl9->Name = L"bl9";
+			this->bl9->Padding = System::Windows::Forms::Padding(20);
+			this->bl9->Size = System::Drawing::Size(193, 63);
+			this->bl9->TabIndex = 3;
+			this->bl9->Text = L"Blocks List #10:";
+			this->bl9->Visible = false;
 			// 
 			// flowLayoutPanel1
 			// 
@@ -768,6 +777,7 @@ namespace DemandPagingAlgorithm {
 			this->pl0->Size = System::Drawing::Size(191, 63);
 			this->pl0->TabIndex = 3;
 			this->pl0->Text = L"Process List #1:";
+			this->pl0->Visible = false;
 			// 
 			// pl1
 			// 
@@ -779,6 +789,7 @@ namespace DemandPagingAlgorithm {
 			this->pl1->Size = System::Drawing::Size(191, 63);
 			this->pl1->TabIndex = 3;
 			this->pl1->Text = L"Process List #2:";
+			this->pl1->Visible = false;
 			// 
 			// pl2
 			// 
@@ -790,6 +801,7 @@ namespace DemandPagingAlgorithm {
 			this->pl2->Size = System::Drawing::Size(191, 63);
 			this->pl2->TabIndex = 3;
 			this->pl2->Text = L"Process List #3:";
+			this->pl2->Visible = false;
 			// 
 			// pl3
 			// 
@@ -801,6 +813,7 @@ namespace DemandPagingAlgorithm {
 			this->pl3->Size = System::Drawing::Size(191, 63);
 			this->pl3->TabIndex = 3;
 			this->pl3->Text = L"Process List #4:";
+			this->pl3->Visible = false;
 			// 
 			// pl4
 			// 
@@ -812,6 +825,7 @@ namespace DemandPagingAlgorithm {
 			this->pl4->Size = System::Drawing::Size(191, 63);
 			this->pl4->TabIndex = 3;
 			this->pl4->Text = L"Process List #5:";
+			this->pl4->Visible = false;
 			// 
 			// pl5
 			// 
@@ -823,6 +837,7 @@ namespace DemandPagingAlgorithm {
 			this->pl5->Size = System::Drawing::Size(191, 63);
 			this->pl5->TabIndex = 3;
 			this->pl5->Text = L"Process List #6:";
+			this->pl5->Visible = false;
 			// 
 			// pl6
 			// 
@@ -834,6 +849,7 @@ namespace DemandPagingAlgorithm {
 			this->pl6->Size = System::Drawing::Size(191, 63);
 			this->pl6->TabIndex = 3;
 			this->pl6->Text = L"Process List #7:";
+			this->pl6->Visible = false;
 			// 
 			// pl7
 			// 
@@ -845,6 +861,7 @@ namespace DemandPagingAlgorithm {
 			this->pl7->Size = System::Drawing::Size(191, 63);
 			this->pl7->TabIndex = 3;
 			this->pl7->Text = L"Process List #8:";
+			this->pl7->Visible = false;
 			// 
 			// pl8
 			// 
@@ -856,6 +873,7 @@ namespace DemandPagingAlgorithm {
 			this->pl8->Size = System::Drawing::Size(191, 63);
 			this->pl8->TabIndex = 3;
 			this->pl8->Text = L"Process List #9:";
+			this->pl8->Visible = false;
 			// 
 			// pl9
 			// 
@@ -867,16 +885,20 @@ namespace DemandPagingAlgorithm {
 			this->pl9->Size = System::Drawing::Size(203, 63);
 			this->pl9->TabIndex = 3;
 			this->pl9->Text = L"Process List #10:";
+			this->pl9->Visible = false;
 			// 
 			// tableLayoutPanel2
 			// 
-			this->tableLayoutPanel2->ColumnCount = 2;
+			this->tableLayoutPanel2->ColumnCount = 3;
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+				46.17647F)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+				53.82353F)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				303)));
 			this->tableLayoutPanel2->Controls->Add(this->label5, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->label6, 1, 0);
+			this->tableLayoutPanel2->Controls->Add(this->label6, 2, 0);
+			this->tableLayoutPanel2->Controls->Add(this->Choice, 1, 0);
 			this->tableLayoutPanel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->tableLayoutPanel2->Location = System::Drawing::Point(0, 0);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
@@ -888,9 +910,9 @@ namespace DemandPagingAlgorithm {
 			// 
 			// label5
 			// 
-			this->label5->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(184, 55);
+			this->label5->Location = System::Drawing::Point(188, 55);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(123, 23);
 			this->label5->TabIndex = 0;
@@ -899,50 +921,102 @@ namespace DemandPagingAlgorithm {
 			// 
 			// label6
 			// 
-			this->label6->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->label6->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(681, 55);
+			this->label6->Location = System::Drawing::Point(683, 55);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(113, 23);
 			this->label6->TabIndex = 0;
 			this->label6->Text = L"Blocks List:";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// Choice
+			// 
+			this->Choice->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->Choice->AutoSize = true;
+			this->Choice->Font = (gcnew System::Drawing::Font(L"Cambria", 20, System::Drawing::FontStyle::Bold));
+			this->Choice->Location = System::Drawing::Point(449, 51);
+			this->Choice->Name = L"Choice";
+			this->Choice->Size = System::Drawing::Size(96, 32);
+			this->Choice->TabIndex = 1;
+			this->Choice->Text = L"Choice";
+			// 
+			// NUPNOProcess
+			// 
+			this->NUPNOProcess->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->NUPNOProcess->Location = System::Drawing::Point(596, 216);
+			this->NUPNOProcess->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->NUPNOProcess->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->NUPNOProcess->Name = L"NUPNOProcess";
+			this->NUPNOProcess->Size = System::Drawing::Size(84, 27);
+			this->NUPNOProcess->TabIndex = 7;
+			this->NUPNOProcess->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			// 
+			// NUPNOBlocks
+			// 
+			this->NUPNOBlocks->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->NUPNOBlocks->Location = System::Drawing::Point(596, 339);
+			this->NUPNOBlocks->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->NUPNOBlocks->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->NUPNOBlocks->Name = L"NUPNOBlocks";
+			this->NUPNOBlocks->Size = System::Drawing::Size(84, 27);
+			this->NUPNOBlocks->TabIndex = 7;
+			this->NUPNOBlocks->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			// 
 			// DPAS
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(984, 961);
 			this->Controls->Add(this->FIFOInElemPanel);
-			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->TBNOBlocks);
-			this->Controls->Add(this->TBNOProcess);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->ChoicesPanel);
 			this->Controls->Add(this->tableLayoutPanel1);
+			this->Controls->Add(this->NUPNOProcess);
+			this->Controls->Add(this->NUPNOBlocks);
 			this->Font = (gcnew System::Drawing::Font(L"Cambria", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"DPAS";
 			this->Text = L"Demand Paging Algorithm Software";
+			this->Load += gcnew System::EventHandler(this, &DPAS::DPAS_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->ChoicesPanel->ResumeLayout(false);
 			this->FIFOInElemPanel->ResumeLayout(false);
 			this->flowLayoutPanel4->ResumeLayout(false);
-			this->flowLayoutPanel4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal0))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal9))->EndInit();
 			this->flowLayoutPanel3->ResumeLayout(false);
-			this->flowLayoutPanel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal0))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDProcessVal9))->EndInit();
 			this->flowLayoutPanel2->ResumeLayout(false);
 			this->flowLayoutPanel2->PerformLayout();
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->flowLayoutPanel1->PerformLayout();
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOProcess))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOBlocks))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -952,9 +1026,82 @@ namespace DemandPagingAlgorithm {
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void ChangePl0_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->processLabel = gcnew array<System::Windows::Forms::Label^>(1);
+	
+}
+	   //FIFO Chosen
+private: System::Void FIFO_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Choice->Text = "FIFO";
+	this->FIFOInElemPanel->Visible = true;
+	for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
+		this->processLabel[i]->Visible = true;
+		this->processNUD[i]->Visible = true;
+	}
+	for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
+		this->blocksLabel[i]->Visible = true;
+		this->blocksNUD[i]->Visible = true;
+	}
+}
+	   //Best Fit Chosen
+private: System::Void BestFit_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Choice->Text = "Best Fit";
+	this->FIFOInElemPanel->Visible = true;
+	for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
+		this->processLabel[i]->Visible = true;
+		this->processNUD[i]->Visible = true;
+	}
+	for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
+		this->blocksLabel[i]->Visible = true;
+		this->blocksNUD[i]->Visible = true;
+	}
+}
+private: System::Void DPAS_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->processLabel = gcnew array<System::Windows::Forms::Label^>(10);
 	this->processLabel[0] = this->pl0;
-	this->processLabel[0]->Text = "Hello";
+	this->processLabel[1] = this->pl1;
+	this->processLabel[2] = this->pl2;
+	this->processLabel[3] = this->pl3;
+	this->processLabel[4] = this->pl4;
+	this->processLabel[5] = this->pl5;
+	this->processLabel[6] = this->pl6;
+	this->processLabel[7] = this->pl7;
+	this->processLabel[8] = this->pl8;
+	this->processLabel[9] = this->pl9;
+
+	this->blocksLabel = gcnew array<System::Windows::Forms::Label^>(10);
+	this->blocksLabel[0] = this->bl0;
+	this->blocksLabel[1] = this->bl1;
+	this->blocksLabel[2] = this->bl2;
+	this->blocksLabel[3] = this->bl3;
+	this->blocksLabel[4] = this->bl4;
+	this->blocksLabel[5] = this->bl5;
+	this->blocksLabel[6] = this->bl6;
+	this->blocksLabel[7] = this->bl7;
+	this->blocksLabel[8] = this->bl8;
+	this->blocksLabel[9] = this->bl9;
+
+	this->processNUD = gcnew array<System::Windows::Forms::NumericUpDown^>(10);
+	this->processNUD[0] = this->NUDProcessVal0;
+	this->processNUD[1] = this->NUDProcessVal1;
+	this->processNUD[2] = this->NUDProcessVal2;
+	this->processNUD[3] = this->NUDProcessVal3;
+	this->processNUD[4] = this->NUDProcessVal4;
+	this->processNUD[5] = this->NUDProcessVal5;
+	this->processNUD[6] = this->NUDProcessVal6;
+	this->processNUD[7] = this->NUDProcessVal7;
+	this->processNUD[8] = this->NUDProcessVal8;
+	this->processNUD[9] = this->NUDProcessVal9;
+
+	this->blocksNUD = gcnew array<System::Windows::Forms::NumericUpDown^>(10);
+	this->blocksNUD[0] = this->NUDBlocksVal0;
+	this->blocksNUD[1] = this->NUDBlocksVal1;
+	this->blocksNUD[2] = this->NUDBlocksVal2;
+	this->blocksNUD[3] = this->NUDBlocksVal3;
+	this->blocksNUD[4] = this->NUDBlocksVal4;
+	this->blocksNUD[5] = this->NUDBlocksVal5;
+	this->blocksNUD[6] = this->NUDBlocksVal6;
+	this->blocksNUD[7] = this->NUDBlocksVal7;
+	this->blocksNUD[8] = this->NUDBlocksVal8;
+	this->blocksNUD[9] = this->NUDBlocksVal9;
 }
 };
 }
