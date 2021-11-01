@@ -48,7 +48,8 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Panel^ FIFOInElemPanel;
+	private: System::Windows::Forms::Panel^ InElemPanel;
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
@@ -75,7 +76,8 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::Label^ pl8;
 	private: System::Windows::Forms::Label^ pl9;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel3;
-	private: System::Windows::Forms::Button^ ChangePl0;
+	private: System::Windows::Forms::Button^ startAlgoButton;
+
 	private: System::Windows::Forms::Label^ Choice;
 	private: System::Windows::Forms::NumericUpDown^ NUPNOProcess;
 	private: System::Windows::Forms::NumericUpDown^ NUPNOBlocks;
@@ -107,6 +109,7 @@ namespace DemandPagingAlgorithm {
 	private: array<System::Windows::Forms::Label^>^ blocksLabel;
 	private: array<System::Windows::Forms::NumericUpDown^>^ processNUD;
 	private: array<System::Windows::Forms::NumericUpDown^>^ blocksNUD;
+	private: System::Windows::Forms::Button^ backToMenuButton;
 
 
 
@@ -136,8 +139,9 @@ namespace DemandPagingAlgorithm {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->FIFOInElemPanel = (gcnew System::Windows::Forms::Panel());
-			this->ChangePl0 = (gcnew System::Windows::Forms::Button());
+			this->InElemPanel = (gcnew System::Windows::Forms::Panel());
+			this->backToMenuButton = (gcnew System::Windows::Forms::Button());
+			this->startAlgoButton = (gcnew System::Windows::Forms::Button());
 			this->flowLayoutPanel4 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->NUDBlocksVal0 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->NUDBlocksVal1 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -190,7 +194,7 @@ namespace DemandPagingAlgorithm {
 			this->NUPNOBlocks = (gcnew System::Windows::Forms::NumericUpDown());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->ChoicesPanel->SuspendLayout();
-			this->FIFOInElemPanel->SuspendLayout();
+			this->InElemPanel->SuspendLayout();
 			this->flowLayoutPanel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal1))->BeginInit();
@@ -355,29 +359,39 @@ namespace DemandPagingAlgorithm {
 			this->label4->TabIndex = 2;
 			this->label4->Text = L"4 - 10";
 			// 
-			// FIFOInElemPanel
+			// InElemPanel
 			// 
-			this->FIFOInElemPanel->Controls->Add(this->ChangePl0);
-			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel4);
-			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel3);
-			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel2);
-			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel1);
-			this->FIFOInElemPanel->Controls->Add(this->tableLayoutPanel2);
-			this->FIFOInElemPanel->Location = System::Drawing::Point(0, 0);
-			this->FIFOInElemPanel->Name = L"FIFOInElemPanel";
-			this->FIFOInElemPanel->Size = System::Drawing::Size(984, 961);
-			this->FIFOInElemPanel->TabIndex = 5;
-			this->FIFOInElemPanel->Visible = false;
+			this->InElemPanel->Controls->Add(this->backToMenuButton);
+			this->InElemPanel->Controls->Add(this->startAlgoButton);
+			this->InElemPanel->Controls->Add(this->flowLayoutPanel4);
+			this->InElemPanel->Controls->Add(this->flowLayoutPanel3);
+			this->InElemPanel->Controls->Add(this->flowLayoutPanel2);
+			this->InElemPanel->Controls->Add(this->flowLayoutPanel1);
+			this->InElemPanel->Controls->Add(this->tableLayoutPanel2);
+			this->InElemPanel->Location = System::Drawing::Point(0, 0);
+			this->InElemPanel->Name = L"InElemPanel";
+			this->InElemPanel->Size = System::Drawing::Size(984, 961);
+			this->InElemPanel->TabIndex = 5;
+			this->InElemPanel->Visible = false;
 			// 
-			// ChangePl0
+			// backToMenuButton
 			// 
-			this->ChangePl0->Location = System::Drawing::Point(393, 869);
-			this->ChangePl0->Name = L"ChangePl0";
-			this->ChangePl0->Size = System::Drawing::Size(189, 61);
-			this->ChangePl0->TabIndex = 6;
-			this->ChangePl0->Text = L"button1";
-			this->ChangePl0->UseVisualStyleBackColor = true;
-			this->ChangePl0->Click += gcnew System::EventHandler(this, &DPAS::ChangePl0_Click);
+			this->backToMenuButton->Location = System::Drawing::Point(263, 845);
+			this->backToMenuButton->Name = L"backToMenuButton";
+			this->backToMenuButton->Size = System::Drawing::Size(189, 61);
+			this->backToMenuButton->TabIndex = 6;
+			this->backToMenuButton->Text = L"Back";
+			this->backToMenuButton->UseVisualStyleBackColor = true;
+			this->backToMenuButton->Click += gcnew System::EventHandler(this, &DPAS::backToMenuButton_Click);
+			// 
+			// startAlgoButton
+			// 
+			this->startAlgoButton->Location = System::Drawing::Point(542, 845);
+			this->startAlgoButton->Name = L"startAlgoButton";
+			this->startAlgoButton->Size = System::Drawing::Size(189, 61);
+			this->startAlgoButton->TabIndex = 6;
+			this->startAlgoButton->Text = L"Start";
+			this->startAlgoButton->UseVisualStyleBackColor = true;
 			// 
 			// flowLayoutPanel4
 			// 
@@ -401,9 +415,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal0->Location = System::Drawing::Point(3, 14);
 			this->NUDBlocksVal0->Margin = System::Windows::Forms::Padding(3, 14, 3, 3);
 			this->NUDBlocksVal0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal0->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal0->Name = L"NUDBlocksVal0";
 			this->NUDBlocksVal0->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal0->TabIndex = 0;
+			this->NUDBlocksVal0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal0->Visible = false;
 			// 
 			// NUDBlocksVal1
@@ -411,9 +427,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal1->Location = System::Drawing::Point(3, 78);
 			this->NUDBlocksVal1->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDBlocksVal1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal1->Name = L"NUDBlocksVal1";
 			this->NUDBlocksVal1->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal1->TabIndex = 0;
+			this->NUDBlocksVal1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal1->Visible = false;
 			// 
 			// NUDBlocksVal2
@@ -421,9 +439,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal2->Location = System::Drawing::Point(3, 142);
 			this->NUDBlocksVal2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDBlocksVal2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal2->Name = L"NUDBlocksVal2";
 			this->NUDBlocksVal2->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal2->TabIndex = 0;
+			this->NUDBlocksVal2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal2->Visible = false;
 			// 
 			// NUDBlocksVal3
@@ -431,9 +451,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal3->Location = System::Drawing::Point(3, 206);
 			this->NUDBlocksVal3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDBlocksVal3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal3->Name = L"NUDBlocksVal3";
 			this->NUDBlocksVal3->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal3->TabIndex = 0;
+			this->NUDBlocksVal3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal3->Visible = false;
 			// 
 			// NUDBlocksVal4
@@ -441,9 +463,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal4->Location = System::Drawing::Point(3, 270);
 			this->NUDBlocksVal4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDBlocksVal4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal4->Name = L"NUDBlocksVal4";
 			this->NUDBlocksVal4->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal4->TabIndex = 0;
+			this->NUDBlocksVal4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal4->Visible = false;
 			// 
 			// NUDBlocksVal5
@@ -451,9 +475,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal5->Location = System::Drawing::Point(3, 334);
 			this->NUDBlocksVal5->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDBlocksVal5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal5->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal5->Name = L"NUDBlocksVal5";
 			this->NUDBlocksVal5->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal5->TabIndex = 0;
+			this->NUDBlocksVal5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal5->Visible = false;
 			// 
 			// NUDBlocksVal6
@@ -461,9 +487,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal6->Location = System::Drawing::Point(3, 397);
 			this->NUDBlocksVal6->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDBlocksVal6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal6->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal6->Name = L"NUDBlocksVal6";
 			this->NUDBlocksVal6->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal6->TabIndex = 0;
+			this->NUDBlocksVal6->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal6->Visible = false;
 			// 
 			// NUDBlocksVal7
@@ -471,9 +499,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal7->Location = System::Drawing::Point(3, 460);
 			this->NUDBlocksVal7->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDBlocksVal7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal7->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal7->Name = L"NUDBlocksVal7";
 			this->NUDBlocksVal7->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal7->TabIndex = 0;
+			this->NUDBlocksVal7->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal7->Visible = false;
 			// 
 			// NUDBlocksVal8
@@ -481,9 +511,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal8->Location = System::Drawing::Point(3, 523);
 			this->NUDBlocksVal8->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDBlocksVal8->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal8->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal8->Name = L"NUDBlocksVal8";
 			this->NUDBlocksVal8->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal8->TabIndex = 0;
+			this->NUDBlocksVal8->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal8->Visible = false;
 			// 
 			// NUDBlocksVal9
@@ -491,9 +523,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDBlocksVal9->Location = System::Drawing::Point(3, 586);
 			this->NUDBlocksVal9->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDBlocksVal9->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDBlocksVal9->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal9->Name = L"NUDBlocksVal9";
 			this->NUDBlocksVal9->Size = System::Drawing::Size(197, 31);
 			this->NUDBlocksVal9->TabIndex = 0;
+			this->NUDBlocksVal9->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDBlocksVal9->Visible = false;
 			// 
 			// flowLayoutPanel3
@@ -518,9 +552,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal0->Location = System::Drawing::Point(3, 14);
 			this->NUDProcessVal0->Margin = System::Windows::Forms::Padding(3, 14, 3, 3);
 			this->NUDProcessVal0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal0->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal0->Name = L"NUDProcessVal0";
 			this->NUDProcessVal0->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal0->TabIndex = 0;
+			this->NUDProcessVal0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal0->Visible = false;
 			// 
 			// NUDProcessVal1
@@ -528,9 +564,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal1->Location = System::Drawing::Point(3, 78);
 			this->NUDProcessVal1->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDProcessVal1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal1->Name = L"NUDProcessVal1";
 			this->NUDProcessVal1->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal1->TabIndex = 0;
+			this->NUDProcessVal1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal1->Visible = false;
 			// 
 			// NUDProcessVal2
@@ -538,9 +576,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal2->Location = System::Drawing::Point(3, 142);
 			this->NUDProcessVal2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDProcessVal2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal2->Name = L"NUDProcessVal2";
 			this->NUDProcessVal2->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal2->TabIndex = 0;
+			this->NUDProcessVal2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal2->Visible = false;
 			// 
 			// NUDProcessVal3
@@ -548,9 +588,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal3->Location = System::Drawing::Point(3, 206);
 			this->NUDProcessVal3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDProcessVal3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal3->Name = L"NUDProcessVal3";
 			this->NUDProcessVal3->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal3->TabIndex = 0;
+			this->NUDProcessVal3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal3->Visible = false;
 			// 
 			// NUDProcessVal4
@@ -558,9 +600,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal4->Location = System::Drawing::Point(3, 270);
 			this->NUDProcessVal4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDProcessVal4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal4->Name = L"NUDProcessVal4";
 			this->NUDProcessVal4->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal4->TabIndex = 0;
+			this->NUDProcessVal4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal4->Visible = false;
 			// 
 			// NUDProcessVal5
@@ -568,9 +612,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal5->Location = System::Drawing::Point(3, 334);
 			this->NUDProcessVal5->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
 			this->NUDProcessVal5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal5->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal5->Name = L"NUDProcessVal5";
 			this->NUDProcessVal5->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal5->TabIndex = 0;
+			this->NUDProcessVal5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal5->Visible = false;
 			// 
 			// NUDProcessVal6
@@ -578,9 +624,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal6->Location = System::Drawing::Point(3, 397);
 			this->NUDProcessVal6->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDProcessVal6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal6->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal6->Name = L"NUDProcessVal6";
 			this->NUDProcessVal6->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal6->TabIndex = 0;
+			this->NUDProcessVal6->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal6->Visible = false;
 			// 
 			// NUDProcessVal7
@@ -588,9 +636,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal7->Location = System::Drawing::Point(3, 460);
 			this->NUDProcessVal7->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDProcessVal7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal7->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal7->Name = L"NUDProcessVal7";
 			this->NUDProcessVal7->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal7->TabIndex = 0;
+			this->NUDProcessVal7->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal7->Visible = false;
 			// 
 			// NUDProcessVal8
@@ -598,9 +648,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal8->Location = System::Drawing::Point(3, 523);
 			this->NUDProcessVal8->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDProcessVal8->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal8->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal8->Name = L"NUDProcessVal8";
 			this->NUDProcessVal8->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal8->TabIndex = 0;
+			this->NUDProcessVal8->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal8->Visible = false;
 			// 
 			// NUDProcessVal9
@@ -608,9 +660,11 @@ namespace DemandPagingAlgorithm {
 			this->NUDProcessVal9->Location = System::Drawing::Point(3, 586);
 			this->NUDProcessVal9->Margin = System::Windows::Forms::Padding(3, 29, 3, 3);
 			this->NUDProcessVal9->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->NUDProcessVal9->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal9->Name = L"NUDProcessVal9";
 			this->NUDProcessVal9->Size = System::Drawing::Size(197, 31);
 			this->NUDProcessVal9->TabIndex = 0;
+			this->NUDProcessVal9->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->NUDProcessVal9->Visible = false;
 			// 
 			// flowLayoutPanel2
@@ -967,7 +1021,7 @@ namespace DemandPagingAlgorithm {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(984, 961);
-			this->Controls->Add(this->FIFOInElemPanel);
+			this->Controls->Add(this->InElemPanel);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -986,7 +1040,7 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->ChoicesPanel->ResumeLayout(false);
-			this->FIFOInElemPanel->ResumeLayout(false);
+			this->InElemPanel->ResumeLayout(false);
 			this->flowLayoutPanel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal0))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal1))->EndInit();
@@ -1022,16 +1076,10 @@ namespace DemandPagingAlgorithm {
 
 		}
 #pragma endregion
-		
-private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void ChangePl0_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
 	   //FIFO Chosen
 private: System::Void FIFO_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Choice->Text = "FIFO";
-	this->FIFOInElemPanel->Visible = true;
+	this->InElemPanel->Visible = true;
 	for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
 		this->processLabel[i]->Visible = true;
 		this->processNUD[i]->Visible = true;
@@ -1044,7 +1092,7 @@ private: System::Void FIFO_Click(System::Object^ sender, System::EventArgs^ e) {
 	   //Best Fit Chosen
 private: System::Void BestFit_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Choice->Text = "Best Fit";
-	this->FIFOInElemPanel->Visible = true;
+	this->InElemPanel->Visible = true;
 	for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
 		this->processLabel[i]->Visible = true;
 		this->processNUD[i]->Visible = true;
@@ -1054,6 +1102,18 @@ private: System::Void BestFit_Click(System::Object^ sender, System::EventArgs^ e
 		this->blocksNUD[i]->Visible = true;
 	}
 }
+
+private: System::Void backToMenuButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->InElemPanel->Visible = false;
+	//Close all Label
+	for (int i = 0; i < 10; ++i) {
+		this->processLabel[i]->Visible = false;
+		this->processNUD[i]->Visible = false;
+		this->blocksLabel[i]->Visible = false;
+		this->blocksNUD[i]->Visible = false;
+	}
+}
+
 private: System::Void DPAS_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->processLabel = gcnew array<System::Windows::Forms::Label^>(10);
 	this->processLabel[0] = this->pl0;
@@ -1103,5 +1163,6 @@ private: System::Void DPAS_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->blocksNUD[8] = this->NUDBlocksVal8;
 	this->blocksNUD[9] = this->NUDBlocksVal9;
 }
+
 };
 }
