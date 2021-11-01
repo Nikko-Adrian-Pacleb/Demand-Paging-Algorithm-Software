@@ -110,12 +110,12 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::TextBox^ btb7;
 	private: System::Windows::Forms::TextBox^ btb8;
 	private: System::Windows::Forms::TextBox^ btb9;
+	private: System::Windows::Forms::Button^ ChangePl0;
 
 	//--!!--
 	//Array Label Process
 	private: array<System::Windows::Forms::Label^> ^processLabel;
-
-
+			
 
 
 
@@ -166,6 +166,18 @@ namespace DemandPagingAlgorithm {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->FIFOInElemPanel = (gcnew System::Windows::Forms::Panel());
+			this->ChangePl0 = (gcnew System::Windows::Forms::Button());
+			this->flowLayoutPanel4 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->btb0 = (gcnew System::Windows::Forms::TextBox());
+			this->btb1 = (gcnew System::Windows::Forms::TextBox());
+			this->btb2 = (gcnew System::Windows::Forms::TextBox());
+			this->btb3 = (gcnew System::Windows::Forms::TextBox());
+			this->btb4 = (gcnew System::Windows::Forms::TextBox());
+			this->btb5 = (gcnew System::Windows::Forms::TextBox());
+			this->btb6 = (gcnew System::Windows::Forms::TextBox());
+			this->btb7 = (gcnew System::Windows::Forms::TextBox());
+			this->btb8 = (gcnew System::Windows::Forms::TextBox());
+			this->btb9 = (gcnew System::Windows::Forms::TextBox());
 			this->flowLayoutPanel3 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->ptb0 = (gcnew System::Windows::Forms::TextBox());
 			this->ptb1 = (gcnew System::Windows::Forms::TextBox());
@@ -173,6 +185,10 @@ namespace DemandPagingAlgorithm {
 			this->ptb3 = (gcnew System::Windows::Forms::TextBox());
 			this->ptb4 = (gcnew System::Windows::Forms::TextBox());
 			this->ptb5 = (gcnew System::Windows::Forms::TextBox());
+			this->ptb6 = (gcnew System::Windows::Forms::TextBox());
+			this->ptb7 = (gcnew System::Windows::Forms::TextBox());
+			this->ptb8 = (gcnew System::Windows::Forms::TextBox());
+			this->ptb9 = (gcnew System::Windows::Forms::TextBox());
 			this->flowLayoutPanel2 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->bl0 = (gcnew System::Windows::Forms::Label());
 			this->bl1 = (gcnew System::Windows::Forms::Label());
@@ -198,36 +214,15 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->ptb6 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb7 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb8 = (gcnew System::Windows::Forms::TextBox());
-			this->ptb9 = (gcnew System::Windows::Forms::TextBox());
-			this->flowLayoutPanel4 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->btb0 = (gcnew System::Windows::Forms::TextBox());
-			this->btb1 = (gcnew System::Windows::Forms::TextBox());
-			this->btb2 = (gcnew System::Windows::Forms::TextBox());
-			this->btb3 = (gcnew System::Windows::Forms::TextBox());
-			this->btb4 = (gcnew System::Windows::Forms::TextBox());
-			this->btb5 = (gcnew System::Windows::Forms::TextBox());
-			this->btb6 = (gcnew System::Windows::Forms::TextBox());
-			this->btb7 = (gcnew System::Windows::Forms::TextBox());
-			this->btb8 = (gcnew System::Windows::Forms::TextBox());
-			this->btb9 = (gcnew System::Windows::Forms::TextBox());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->ChoicesPanel->SuspendLayout();
 			this->FIFOInElemPanel->SuspendLayout();
+			this->flowLayoutPanel4->SuspendLayout();
 			this->flowLayoutPanel3->SuspendLayout();
 			this->flowLayoutPanel2->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
-			this->flowLayoutPanel4->SuspendLayout();
 			this->SuspendLayout();
-
-			//--!!--
-			//ProcessList Label
-			this->processLabel = gcnew array<System::Windows::Forms::Label^>(10);
-
-
 			// 
 			// tableLayoutPanel1
 			// 
@@ -394,6 +389,7 @@ namespace DemandPagingAlgorithm {
 			// 
 			// FIFOInElemPanel
 			// 
+			this->FIFOInElemPanel->Controls->Add(this->ChangePl0);
 			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel4);
 			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel3);
 			this->FIFOInElemPanel->Controls->Add(this->flowLayoutPanel2);
@@ -403,7 +399,118 @@ namespace DemandPagingAlgorithm {
 			this->FIFOInElemPanel->Name = L"FIFOInElemPanel";
 			this->FIFOInElemPanel->Size = System::Drawing::Size(984, 961);
 			this->FIFOInElemPanel->TabIndex = 5;
-			this->FIFOInElemPanel->Visible = false;
+			// 
+			// ChangePl0
+			// 
+			this->ChangePl0->Location = System::Drawing::Point(393, 869);
+			this->ChangePl0->Name = L"ChangePl0";
+			this->ChangePl0->Size = System::Drawing::Size(189, 61);
+			this->ChangePl0->TabIndex = 6;
+			this->ChangePl0->Text = L"button1";
+			this->ChangePl0->UseVisualStyleBackColor = true;
+			this->ChangePl0->Click += gcnew System::EventHandler(this, &DPAS::ChangePl0_Click);
+			// 
+			// flowLayoutPanel4
+			// 
+			this->flowLayoutPanel4->Controls->Add(this->btb0);
+			this->flowLayoutPanel4->Controls->Add(this->btb1);
+			this->flowLayoutPanel4->Controls->Add(this->btb2);
+			this->flowLayoutPanel4->Controls->Add(this->btb3);
+			this->flowLayoutPanel4->Controls->Add(this->btb4);
+			this->flowLayoutPanel4->Controls->Add(this->btb5);
+			this->flowLayoutPanel4->Controls->Add(this->btb6);
+			this->flowLayoutPanel4->Controls->Add(this->btb7);
+			this->flowLayoutPanel4->Controls->Add(this->btb8);
+			this->flowLayoutPanel4->Controls->Add(this->btb9);
+			this->flowLayoutPanel4->Location = System::Drawing::Point(759, 140);
+			this->flowLayoutPanel4->Name = L"flowLayoutPanel4";
+			this->flowLayoutPanel4->Size = System::Drawing::Size(200, 699);
+			this->flowLayoutPanel4->TabIndex = 3;
+			// 
+			// btb0
+			// 
+			this->btb0->Location = System::Drawing::Point(3, 20);
+			this->btb0->Margin = System::Windows::Forms::Padding(3, 20, 3, 3);
+			this->btb0->Name = L"btb0";
+			this->btb0->Size = System::Drawing::Size(197, 31);
+			this->btb0->TabIndex = 0;
+			// 
+			// btb1
+			// 
+			this->btb1->Location = System::Drawing::Point(3, 80);
+			this->btb1->Margin = System::Windows::Forms::Padding(3, 26, 3, 3);
+			this->btb1->Name = L"btb1";
+			this->btb1->Size = System::Drawing::Size(197, 31);
+			this->btb1->TabIndex = 0;
+			// 
+			// btb2
+			// 
+			this->btb2->Location = System::Drawing::Point(3, 144);
+			this->btb2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->btb2->Name = L"btb2";
+			this->btb2->Size = System::Drawing::Size(197, 31);
+			this->btb2->TabIndex = 0;
+			// 
+			// btb3
+			// 
+			this->btb3->Location = System::Drawing::Point(3, 208);
+			this->btb3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->btb3->Name = L"btb3";
+			this->btb3->Size = System::Drawing::Size(197, 31);
+			this->btb3->TabIndex = 0;
+			// 
+			// btb4
+			// 
+			this->btb4->Location = System::Drawing::Point(3, 272);
+			this->btb4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
+			this->btb4->Name = L"btb4";
+			this->btb4->Size = System::Drawing::Size(197, 31);
+			this->btb4->TabIndex = 0;
+			// 
+			// btb5
+			// 
+			this->btb5->Location = System::Drawing::Point(3, 334);
+			this->btb5->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->btb5->Name = L"btb5";
+			this->btb5->Size = System::Drawing::Size(197, 31);
+			this->btb5->TabIndex = 0;
+			this->btb5->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// btb6
+			// 
+			this->btb6->Location = System::Drawing::Point(3, 396);
+			this->btb6->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->btb6->Name = L"btb6";
+			this->btb6->Size = System::Drawing::Size(197, 31);
+			this->btb6->TabIndex = 0;
+			this->btb6->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// btb7
+			// 
+			this->btb7->Location = System::Drawing::Point(3, 458);
+			this->btb7->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->btb7->Name = L"btb7";
+			this->btb7->Size = System::Drawing::Size(197, 31);
+			this->btb7->TabIndex = 0;
+			this->btb7->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// btb8
+			// 
+			this->btb8->Location = System::Drawing::Point(3, 520);
+			this->btb8->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->btb8->Name = L"btb8";
+			this->btb8->Size = System::Drawing::Size(197, 31);
+			this->btb8->TabIndex = 0;
+			this->btb8->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// btb9
+			// 
+			this->btb9->Location = System::Drawing::Point(3, 582);
+			this->btb9->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->btb9->Name = L"btb9";
+			this->btb9->Size = System::Drawing::Size(197, 31);
+			this->btb9->TabIndex = 0;
+			this->btb9->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
 			// 
 			// flowLayoutPanel3
 			// 
@@ -470,6 +577,42 @@ namespace DemandPagingAlgorithm {
 			this->ptb5->Size = System::Drawing::Size(197, 31);
 			this->ptb5->TabIndex = 0;
 			this->ptb5->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// ptb6
+			// 
+			this->ptb6->Location = System::Drawing::Point(3, 396);
+			this->ptb6->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->ptb6->Name = L"ptb6";
+			this->ptb6->Size = System::Drawing::Size(197, 31);
+			this->ptb6->TabIndex = 0;
+			this->ptb6->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// ptb7
+			// 
+			this->ptb7->Location = System::Drawing::Point(3, 458);
+			this->ptb7->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->ptb7->Name = L"ptb7";
+			this->ptb7->Size = System::Drawing::Size(197, 31);
+			this->ptb7->TabIndex = 0;
+			this->ptb7->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// ptb8
+			// 
+			this->ptb8->Location = System::Drawing::Point(3, 520);
+			this->ptb8->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->ptb8->Name = L"ptb8";
+			this->ptb8->Size = System::Drawing::Size(197, 31);
+			this->ptb8->TabIndex = 0;
+			this->ptb8->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
+			// 
+			// ptb9
+			// 
+			this->ptb9->Location = System::Drawing::Point(3, 582);
+			this->ptb9->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
+			this->ptb9->Name = L"ptb9";
+			this->ptb9->Size = System::Drawing::Size(197, 31);
+			this->ptb9->TabIndex = 0;
+			this->ptb9->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
 			// 
 			// flowLayoutPanel2
 			// 
@@ -765,144 +908,6 @@ namespace DemandPagingAlgorithm {
 			this->label6->Text = L"Blocks List:";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// ptb6
-			// 
-			this->ptb6->Location = System::Drawing::Point(3, 396);
-			this->ptb6->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb6->Name = L"ptb6";
-			this->ptb6->Size = System::Drawing::Size(197, 31);
-			this->ptb6->TabIndex = 0;
-			this->ptb6->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// ptb7
-			// 
-			this->ptb7->Location = System::Drawing::Point(3, 458);
-			this->ptb7->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb7->Name = L"ptb7";
-			this->ptb7->Size = System::Drawing::Size(197, 31);
-			this->ptb7->TabIndex = 0;
-			this->ptb7->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// ptb8
-			// 
-			this->ptb8->Location = System::Drawing::Point(3, 520);
-			this->ptb8->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb8->Name = L"ptb8";
-			this->ptb8->Size = System::Drawing::Size(197, 31);
-			this->ptb8->TabIndex = 0;
-			this->ptb8->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// ptb9
-			// 
-			this->ptb9->Location = System::Drawing::Point(3, 582);
-			this->ptb9->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->ptb9->Name = L"ptb9";
-			this->ptb9->Size = System::Drawing::Size(197, 31);
-			this->ptb9->TabIndex = 0;
-			this->ptb9->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// flowLayoutPanel4
-			// 
-			this->flowLayoutPanel4->Controls->Add(this->btb0);
-			this->flowLayoutPanel4->Controls->Add(this->btb1);
-			this->flowLayoutPanel4->Controls->Add(this->btb2);
-			this->flowLayoutPanel4->Controls->Add(this->btb3);
-			this->flowLayoutPanel4->Controls->Add(this->btb4);
-			this->flowLayoutPanel4->Controls->Add(this->btb5);
-			this->flowLayoutPanel4->Controls->Add(this->btb6);
-			this->flowLayoutPanel4->Controls->Add(this->btb7);
-			this->flowLayoutPanel4->Controls->Add(this->btb8);
-			this->flowLayoutPanel4->Controls->Add(this->btb9);
-			this->flowLayoutPanel4->Location = System::Drawing::Point(759, 140);
-			this->flowLayoutPanel4->Name = L"flowLayoutPanel4";
-			this->flowLayoutPanel4->Size = System::Drawing::Size(200, 699);
-			this->flowLayoutPanel4->TabIndex = 3;
-			// 
-			// btb0
-			// 
-			this->btb0->Location = System::Drawing::Point(3, 20);
-			this->btb0->Margin = System::Windows::Forms::Padding(3, 20, 3, 3);
-			this->btb0->Name = L"btb0";
-			this->btb0->Size = System::Drawing::Size(197, 31);
-			this->btb0->TabIndex = 0;
-			// 
-			// btb1
-			// 
-			this->btb1->Location = System::Drawing::Point(3, 80);
-			this->btb1->Margin = System::Windows::Forms::Padding(3, 26, 3, 3);
-			this->btb1->Name = L"btb1";
-			this->btb1->Size = System::Drawing::Size(197, 31);
-			this->btb1->TabIndex = 0;
-			// 
-			// btb2
-			// 
-			this->btb2->Location = System::Drawing::Point(3, 144);
-			this->btb2->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btb2->Name = L"btb2";
-			this->btb2->Size = System::Drawing::Size(197, 31);
-			this->btb2->TabIndex = 0;
-			// 
-			// btb3
-			// 
-			this->btb3->Location = System::Drawing::Point(3, 208);
-			this->btb3->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btb3->Name = L"btb3";
-			this->btb3->Size = System::Drawing::Size(197, 31);
-			this->btb3->TabIndex = 0;
-			// 
-			// btb4
-			// 
-			this->btb4->Location = System::Drawing::Point(3, 272);
-			this->btb4->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btb4->Name = L"btb4";
-			this->btb4->Size = System::Drawing::Size(197, 31);
-			this->btb4->TabIndex = 0;
-			// 
-			// btb5
-			// 
-			this->btb5->Location = System::Drawing::Point(3, 334);
-			this->btb5->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb5->Name = L"btb5";
-			this->btb5->Size = System::Drawing::Size(197, 31);
-			this->btb5->TabIndex = 0;
-			this->btb5->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// btb6
-			// 
-			this->btb6->Location = System::Drawing::Point(3, 396);
-			this->btb6->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb6->Name = L"btb6";
-			this->btb6->Size = System::Drawing::Size(197, 31);
-			this->btb6->TabIndex = 0;
-			this->btb6->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// btb7
-			// 
-			this->btb7->Location = System::Drawing::Point(3, 458);
-			this->btb7->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb7->Name = L"btb7";
-			this->btb7->Size = System::Drawing::Size(197, 31);
-			this->btb7->TabIndex = 0;
-			this->btb7->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// btb8
-			// 
-			this->btb8->Location = System::Drawing::Point(3, 520);
-			this->btb8->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb8->Name = L"btb8";
-			this->btb8->Size = System::Drawing::Size(197, 31);
-			this->btb8->TabIndex = 0;
-			this->btb8->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
-			// btb9
-			// 
-			this->btb9->Location = System::Drawing::Point(3, 582);
-			this->btb9->Margin = System::Windows::Forms::Padding(3, 28, 3, 3);
-			this->btb9->Name = L"btb9";
-			this->btb9->Size = System::Drawing::Size(197, 31);
-			this->btb9->TabIndex = 0;
-			this->btb9->TextChanged += gcnew System::EventHandler(this, &DPAS::textBox6_TextChanged);
-			// 
 			// DPAS
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -928,6 +933,8 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel1->PerformLayout();
 			this->ChoicesPanel->ResumeLayout(false);
 			this->FIFOInElemPanel->ResumeLayout(false);
+			this->flowLayoutPanel4->ResumeLayout(false);
+			this->flowLayoutPanel4->PerformLayout();
 			this->flowLayoutPanel3->ResumeLayout(false);
 			this->flowLayoutPanel3->PerformLayout();
 			this->flowLayoutPanel2->ResumeLayout(false);
@@ -936,15 +943,18 @@ namespace DemandPagingAlgorithm {
 			this->flowLayoutPanel1->PerformLayout();
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
-			this->flowLayoutPanel4->ResumeLayout(false);
-			this->flowLayoutPanel4->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	
+		
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void ChangePl0_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->processLabel = gcnew array<System::Windows::Forms::Label^>(1);
+	this->processLabel[0] = this->pl0;
+	this->processLabel[0]->Text = "Hello";
 }
 };
 }

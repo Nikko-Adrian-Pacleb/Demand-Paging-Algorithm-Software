@@ -7,5 +7,7 @@ void main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	DemandPagingAlgorithm::DPAS form;
+	//--!!--
+	
 	Application::Run(% form);
 }
