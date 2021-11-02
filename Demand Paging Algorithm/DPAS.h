@@ -79,8 +79,10 @@ namespace DemandPagingAlgorithm {
 	private: System::Windows::Forms::Button^ startAlgoButton;
 
 	private: System::Windows::Forms::Label^ Choice;
-	private: System::Windows::Forms::NumericUpDown^ NUPNOProcess;
-	private: System::Windows::Forms::NumericUpDown^ NUPNOBlocks;
+	private: System::Windows::Forms::NumericUpDown^ numOfProcessNUD;
+	private: System::Windows::Forms::NumericUpDown^ numOfBlocksNUD;
+
+
 	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal0;
 	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal1;
 	private: System::Windows::Forms::NumericUpDown^ NUDProcessVal2;
@@ -109,8 +111,46 @@ namespace DemandPagingAlgorithm {
 	private: array<System::Windows::Forms::Label^>^ blocksLabel;
 	private: array<System::Windows::Forms::NumericUpDown^>^ processNUD;
 	private: array<System::Windows::Forms::NumericUpDown^>^ blocksNUD;
+	private: array<System::Windows::Forms::Label^>^ processListLabel;
+	private: array<System::Windows::Forms::Label^>^ processListValuesLabel;
+	private: array<System::Windows::Forms::Label^>^ memoryBlockSizeLabel;
+	private: array<System::Windows::Forms::Label^>^ processNumberLabel;
+	private: array<System::Windows::Forms::Label^>^ processSizeLabel;
+	private: array<System::Windows::Forms::Label^>^ statusLabel;
+	private: array<System::Windows::Forms::Label^>^ fragmentationLabel;
+
+
 	private: System::Windows::Forms::Button^ backToMenuButton;
 	private: System::Windows::Forms::Panel^ creditsPanel;
+
+	private: System::Windows::Forms::TableLayoutPanel^ processListTablePanel;
+
+
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::TableLayoutPanel^ memoryListTablePanel;
+
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::FlowLayoutPanel^ resultPanel;
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::Label^ label12;
+private: System::Windows::Forms::Label^ label13;
+private: System::Windows::Forms::Label^ label14;
+private: System::Windows::Forms::Label^ label15;
+private: System::Windows::Forms::Button^ ResultToInput;
+
+
+private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
+private: System::Windows::Forms::Label^ label16;
+private: System::Windows::Forms::Label^ label17;
+private: System::Windows::Forms::Label^ totalMemoryBlockSizeLabel;
+private: System::Windows::Forms::Label^ totalProcessUsedLabel;
+private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
+private: System::Windows::Forms::Button^ ResultToMenu;
+
+
+
 
 
 
@@ -141,6 +181,26 @@ namespace DemandPagingAlgorithm {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->InElemPanel = (gcnew System::Windows::Forms::Panel());
+			this->resultPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->processListTablePanel = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->memoryListTablePanel = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->totalMemoryBlockSizeLabel = (gcnew System::Windows::Forms::Label());
+			this->totalProcessUsedLabel = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->ResultToInput = (gcnew System::Windows::Forms::Button());
+			this->ResultToMenu = (gcnew System::Windows::Forms::Button());
 			this->backToMenuButton = (gcnew System::Windows::Forms::Button());
 			this->startAlgoButton = (gcnew System::Windows::Forms::Button());
 			this->flowLayoutPanel4 = (gcnew System::Windows::Forms::FlowLayoutPanel());
@@ -191,12 +251,17 @@ namespace DemandPagingAlgorithm {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->Choice = (gcnew System::Windows::Forms::Label());
-			this->NUPNOProcess = (gcnew System::Windows::Forms::NumericUpDown());
-			this->NUPNOBlocks = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numOfProcessNUD = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numOfBlocksNUD = (gcnew System::Windows::Forms::NumericUpDown());
 			this->creditsPanel = (gcnew System::Windows::Forms::Panel());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->ChoicesPanel->SuspendLayout();
 			this->InElemPanel->SuspendLayout();
+			this->resultPanel->SuspendLayout();
+			this->processListTablePanel->SuspendLayout();
+			this->memoryListTablePanel->SuspendLayout();
+			this->tableLayoutPanel3->SuspendLayout();
+			this->tableLayoutPanel4->SuspendLayout();
 			this->flowLayoutPanel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal1))->BeginInit();
@@ -222,8 +287,8 @@ namespace DemandPagingAlgorithm {
 			this->flowLayoutPanel2->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOProcess))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOBlocks))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numOfProcessNUD))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numOfBlocksNUD))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -365,6 +430,7 @@ namespace DemandPagingAlgorithm {
 			// InElemPanel
 			// 
 			this->InElemPanel->AutoScroll = true;
+			this->InElemPanel->Controls->Add(this->resultPanel);
 			this->InElemPanel->Controls->Add(this->backToMenuButton);
 			this->InElemPanel->Controls->Add(this->startAlgoButton);
 			this->InElemPanel->Controls->Add(this->flowLayoutPanel4);
@@ -372,11 +438,315 @@ namespace DemandPagingAlgorithm {
 			this->InElemPanel->Controls->Add(this->flowLayoutPanel2);
 			this->InElemPanel->Controls->Add(this->flowLayoutPanel1);
 			this->InElemPanel->Controls->Add(this->tableLayoutPanel2);
-			this->InElemPanel->Location = System::Drawing::Point(765, 803);
+			this->InElemPanel->Location = System::Drawing::Point(0, 0);
 			this->InElemPanel->Name = L"InElemPanel";
-			this->InElemPanel->Size = System::Drawing::Size(219, 158);
+			this->InElemPanel->Size = System::Drawing::Size(984, 961);
 			this->InElemPanel->TabIndex = 5;
 			this->InElemPanel->Visible = false;
+			// 
+			// resultPanel
+			// 
+			this->resultPanel->AutoScroll = true;
+			this->resultPanel->Controls->Add(this->processListTablePanel);
+			this->resultPanel->Controls->Add(this->memoryListTablePanel);
+			this->resultPanel->Controls->Add(this->tableLayoutPanel3);
+			this->resultPanel->Controls->Add(this->tableLayoutPanel4);
+			this->resultPanel->Location = System::Drawing::Point(0, 0);
+			this->resultPanel->Name = L"resultPanel";
+			this->resultPanel->Size = System::Drawing::Size(984, 961);
+			this->resultPanel->TabIndex = 8;
+			this->resultPanel->Visible = false;
+			// 
+			// processListTablePanel
+			// 
+			this->processListTablePanel->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->processListTablePanel->ColumnCount = 2;
+			this->processListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->processListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->processListTablePanel->Controls->Add(this->label7, 0, 0);
+			this->processListTablePanel->Controls->Add(this->label9, 0, 1);
+			this->processListTablePanel->Controls->Add(this->label8, 1, 1);
+			this->processListTablePanel->Location = System::Drawing::Point(3, 3);
+			this->processListTablePanel->Margin = System::Windows::Forms::Padding(3, 3, 3, 100);
+			this->processListTablePanel->Name = L"processListTablePanel";
+			this->processListTablePanel->RowCount = 2;
+			this->processListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->processListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->processListTablePanel->Size = System::Drawing::Size(750, 100);
+			this->processListTablePanel->TabIndex = 0;
+			// 
+			// label7
+			// 
+			this->label7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Cambria", 20, System::Drawing::FontStyle::Bold));
+			this->label7->Location = System::Drawing::Point(3, 0);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(175, 50);
+			this->label7->TabIndex = 0;
+			this->label7->Text = L"Process List: ";
+			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::SystemColors::Control;
+			this->label9->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label9->Location = System::Drawing::Point(3, 53);
+			this->label9->Margin = System::Windows::Forms::Padding(3);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(369, 44);
+			this->label9->TabIndex = 0;
+			this->label9->Text = L"Process Number";
+			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label8
+			// 
+			this->label8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::SystemColors::Control;
+			this->label8->Location = System::Drawing::Point(378, 53);
+			this->label8->Margin = System::Windows::Forms::Padding(3);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(369, 44);
+			this->label8->TabIndex = 0;
+			this->label8->Text = L"Memory Requested";
+			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// memoryListTablePanel
+			// 
+			this->memoryListTablePanel->BackColor = System::Drawing::SystemColors::Info;
+			this->memoryListTablePanel->ColumnCount = 5;
+			this->memoryListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				20)));
+			this->memoryListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				20)));
+			this->memoryListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				20)));
+			this->memoryListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				20)));
+			this->memoryListTablePanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				20)));
+			this->memoryListTablePanel->Controls->Add(this->label10, 0, 0);
+			this->memoryListTablePanel->Controls->Add(this->label11, 0, 1);
+			this->memoryListTablePanel->Controls->Add(this->label12, 1, 1);
+			this->memoryListTablePanel->Controls->Add(this->label13, 2, 1);
+			this->memoryListTablePanel->Controls->Add(this->label14, 3, 1);
+			this->memoryListTablePanel->Controls->Add(this->label15, 4, 1);
+			this->memoryListTablePanel->Location = System::Drawing::Point(3, 206);
+			this->memoryListTablePanel->Name = L"memoryListTablePanel";
+			this->memoryListTablePanel->RowCount = 2;
+			this->memoryListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
+				50)));
+			this->memoryListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
+				50)));
+			this->memoryListTablePanel->Size = System::Drawing::Size(981, 100);
+			this->memoryListTablePanel->TabIndex = 1;
+			// 
+			// label10
+			// 
+			this->label10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Cambria", 20, System::Drawing::FontStyle::Bold));
+			this->label10->Location = System::Drawing::Point(3, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(176, 50);
+			this->label10->TabIndex = 0;
+			this->label10->Text = L"Memory List:";
+			this->label10->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label11
+			// 
+			this->label11->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::SystemColors::Control;
+			this->label11->Location = System::Drawing::Point(3, 53);
+			this->label11->Margin = System::Windows::Forms::Padding(3);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(190, 44);
+			this->label11->TabIndex = 0;
+			this->label11->Text = L"Block #:  Size";
+			this->label11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label12
+			// 
+			this->label12->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label12->AutoSize = true;
+			this->label12->BackColor = System::Drawing::SystemColors::Control;
+			this->label12->Location = System::Drawing::Point(199, 53);
+			this->label12->Margin = System::Windows::Forms::Padding(3);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(190, 44);
+			this->label12->TabIndex = 0;
+			this->label12->Text = L"Process Number";
+			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label13
+			// 
+			this->label13->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label13->AutoSize = true;
+			this->label13->BackColor = System::Drawing::SystemColors::Control;
+			this->label13->Location = System::Drawing::Point(395, 53);
+			this->label13->Margin = System::Windows::Forms::Padding(3);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(190, 44);
+			this->label13->TabIndex = 0;
+			this->label13->Text = L"Process Size";
+			this->label13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label14
+			// 
+			this->label14->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label14->AutoSize = true;
+			this->label14->BackColor = System::Drawing::SystemColors::Control;
+			this->label14->Location = System::Drawing::Point(591, 53);
+			this->label14->Margin = System::Windows::Forms::Padding(3);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(190, 44);
+			this->label14->TabIndex = 0;
+			this->label14->Text = L"Status";
+			this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label15
+			// 
+			this->label15->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label15->AutoSize = true;
+			this->label15->BackColor = System::Drawing::SystemColors::Control;
+			this->label15->Location = System::Drawing::Point(787, 53);
+			this->label15->Margin = System::Windows::Forms::Padding(3);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(191, 44);
+			this->label15->TabIndex = 0;
+			this->label15->Text = L"Fragmentation";
+			this->label15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// tableLayoutPanel3
+			// 
+			this->tableLayoutPanel3->ColumnCount = 2;
+			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				40.1631F)));
+			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				59.8369F)));
+			this->tableLayoutPanel3->Controls->Add(this->label16, 0, 0);
+			this->tableLayoutPanel3->Controls->Add(this->label17, 0, 1);
+			this->tableLayoutPanel3->Controls->Add(this->totalMemoryBlockSizeLabel, 1, 0);
+			this->tableLayoutPanel3->Controls->Add(this->totalProcessUsedLabel, 1, 1);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(3, 312);
+			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
+			this->tableLayoutPanel3->RowCount = 2;
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel3->Size = System::Drawing::Size(981, 100);
+			this->tableLayoutPanel3->TabIndex = 0;
+			// 
+			// label16
+			// 
+			this->label16->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(3, 0);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(388, 50);
+			this->label16->TabIndex = 0;
+			this->label16->Text = L"Total Memory Block Size: ";
+			this->label16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label17
+			// 
+			this->label17->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(3, 50);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(388, 50);
+			this->label17->TabIndex = 0;
+			this->label17->Text = L"Total Process Used: ";
+			this->label17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// totalMemoryBlockSizeLabel
+			// 
+			this->totalMemoryBlockSizeLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->totalMemoryBlockSizeLabel->AutoSize = true;
+			this->totalMemoryBlockSizeLabel->Location = System::Drawing::Point(397, 0);
+			this->totalMemoryBlockSizeLabel->Name = L"totalMemoryBlockSizeLabel";
+			this->totalMemoryBlockSizeLabel->Size = System::Drawing::Size(581, 50);
+			this->totalMemoryBlockSizeLabel->TabIndex = 1;
+			this->totalMemoryBlockSizeLabel->Text = L"Value";
+			this->totalMemoryBlockSizeLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// totalProcessUsedLabel
+			// 
+			this->totalProcessUsedLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->totalProcessUsedLabel->AutoSize = true;
+			this->totalProcessUsedLabel->Location = System::Drawing::Point(397, 50);
+			this->totalProcessUsedLabel->Name = L"totalProcessUsedLabel";
+			this->totalProcessUsedLabel->Size = System::Drawing::Size(581, 50);
+			this->totalProcessUsedLabel->TabIndex = 1;
+			this->totalProcessUsedLabel->Text = L"Value";
+			this->totalProcessUsedLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// tableLayoutPanel4
+			// 
+			this->tableLayoutPanel4->ColumnCount = 2;
+			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel4->Controls->Add(this->ResultToInput, 0, 0);
+			this->tableLayoutPanel4->Controls->Add(this->ResultToMenu, 1, 0);
+			this->tableLayoutPanel4->Location = System::Drawing::Point(3, 418);
+			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
+			this->tableLayoutPanel4->RowCount = 1;
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel4->Size = System::Drawing::Size(981, 87);
+			this->tableLayoutPanel4->TabIndex = 3;
+			// 
+			// ResultToInput
+			// 
+			this->ResultToInput->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->ResultToInput->Location = System::Drawing::Point(148, 3);
+			this->ResultToInput->Name = L"ResultToInput";
+			this->ResultToInput->Size = System::Drawing::Size(193, 81);
+			this->ResultToInput->TabIndex = 2;
+			this->ResultToInput->Text = L"Back";
+			this->ResultToInput->UseVisualStyleBackColor = true;
+			this->ResultToInput->Click += gcnew System::EventHandler(this, &DPAS::ResultToInput_Click);
+			// 
+			// ResultToMenu
+			// 
+			this->ResultToMenu->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->ResultToMenu->Location = System::Drawing::Point(639, 3);
+			this->ResultToMenu->Name = L"ResultToMenu";
+			this->ResultToMenu->Size = System::Drawing::Size(193, 81);
+			this->ResultToMenu->TabIndex = 2;
+			this->ResultToMenu->Text = L"Menu";
+			this->ResultToMenu->UseVisualStyleBackColor = true;
+			this->ResultToMenu->Click += gcnew System::EventHandler(this, &DPAS::ResultToMenu_Click);
 			// 
 			// backToMenuButton
 			// 
@@ -396,6 +766,7 @@ namespace DemandPagingAlgorithm {
 			this->startAlgoButton->TabIndex = 6;
 			this->startAlgoButton->Text = L"Start";
 			this->startAlgoButton->UseVisualStyleBackColor = true;
+			this->startAlgoButton->Click += gcnew System::EventHandler(this, &DPAS::startAlgoButton_Click);
 			// 
 			// flowLayoutPanel4
 			// 
@@ -683,9 +1054,9 @@ namespace DemandPagingAlgorithm {
 			this->flowLayoutPanel2->Controls->Add(this->bl7);
 			this->flowLayoutPanel2->Controls->Add(this->bl8);
 			this->flowLayoutPanel2->Controls->Add(this->bl9);
-			this->flowLayoutPanel2->Location = System::Drawing::Point(511, 140);
+			this->flowLayoutPanel2->Location = System::Drawing::Point(532, 140);
 			this->flowLayoutPanel2->Name = L"flowLayoutPanel2";
-			this->flowLayoutPanel2->Size = System::Drawing::Size(220, 699);
+			this->flowLayoutPanel2->Size = System::Drawing::Size(199, 699);
 			this->flowLayoutPanel2->TabIndex = 2;
 			// 
 			// bl0
@@ -963,14 +1334,14 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel2->RowCount = 1;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(954, 134);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(984, 134);
 			this->tableLayoutPanel2->TabIndex = 0;
 			// 
 			// label5
 			// 
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(174, 55);
+			this->label5->Location = System::Drawing::Point(188, 55);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(123, 23);
 			this->label5->TabIndex = 0;
@@ -981,7 +1352,7 @@ namespace DemandPagingAlgorithm {
 			// 
 			this->label6->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(653, 55);
+			this->label6->Location = System::Drawing::Point(683, 55);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(113, 23);
 			this->label6->TabIndex = 0;
@@ -993,33 +1364,33 @@ namespace DemandPagingAlgorithm {
 			this->Choice->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Choice->AutoSize = true;
 			this->Choice->Font = (gcnew System::Drawing::Font(L"Cambria", 20, System::Drawing::FontStyle::Bold));
-			this->Choice->Location = System::Drawing::Point(427, 51);
+			this->Choice->Location = System::Drawing::Point(449, 51);
 			this->Choice->Name = L"Choice";
 			this->Choice->Size = System::Drawing::Size(96, 32);
 			this->Choice->TabIndex = 1;
 			this->Choice->Text = L"Choice";
 			// 
-			// NUPNOProcess
+			// numOfProcessNUD
 			// 
-			this->NUPNOProcess->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->NUPNOProcess->Location = System::Drawing::Point(596, 216);
-			this->NUPNOProcess->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			this->NUPNOProcess->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
-			this->NUPNOProcess->Name = L"NUPNOProcess";
-			this->NUPNOProcess->Size = System::Drawing::Size(84, 27);
-			this->NUPNOProcess->TabIndex = 7;
-			this->NUPNOProcess->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->numOfProcessNUD->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->numOfProcessNUD->Location = System::Drawing::Point(596, 216);
+			this->numOfProcessNUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->numOfProcessNUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->numOfProcessNUD->Name = L"numOfProcessNUD";
+			this->numOfProcessNUD->Size = System::Drawing::Size(84, 27);
+			this->numOfProcessNUD->TabIndex = 7;
+			this->numOfProcessNUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
 			// 
-			// NUPNOBlocks
+			// numOfBlocksNUD
 			// 
-			this->NUPNOBlocks->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->NUPNOBlocks->Location = System::Drawing::Point(596, 339);
-			this->NUPNOBlocks->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			this->NUPNOBlocks->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
-			this->NUPNOBlocks->Name = L"NUPNOBlocks";
-			this->NUPNOBlocks->Size = System::Drawing::Size(84, 27);
-			this->NUPNOBlocks->TabIndex = 7;
-			this->NUPNOBlocks->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->numOfBlocksNUD->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->numOfBlocksNUD->Location = System::Drawing::Point(596, 339);
+			this->numOfBlocksNUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+			this->numOfBlocksNUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
+			this->numOfBlocksNUD->Name = L"numOfBlocksNUD";
+			this->numOfBlocksNUD->Size = System::Drawing::Size(84, 27);
+			this->numOfBlocksNUD->TabIndex = 7;
+			this->numOfBlocksNUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
 			// 
 			// creditsPanel
 			// 
@@ -1033,16 +1404,16 @@ namespace DemandPagingAlgorithm {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(984, 961);
-			this->Controls->Add(this->creditsPanel);
 			this->Controls->Add(this->InElemPanel);
+			this->Controls->Add(this->creditsPanel);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->ChoicesPanel);
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Controls->Add(this->NUPNOProcess);
-			this->Controls->Add(this->NUPNOBlocks);
+			this->Controls->Add(this->numOfProcessNUD);
+			this->Controls->Add(this->numOfBlocksNUD);
 			this->Font = (gcnew System::Drawing::Font(L"Cambria", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -1054,6 +1425,14 @@ namespace DemandPagingAlgorithm {
 			this->tableLayoutPanel1->PerformLayout();
 			this->ChoicesPanel->ResumeLayout(false);
 			this->InElemPanel->ResumeLayout(false);
+			this->resultPanel->ResumeLayout(false);
+			this->processListTablePanel->ResumeLayout(false);
+			this->processListTablePanel->PerformLayout();
+			this->memoryListTablePanel->ResumeLayout(false);
+			this->memoryListTablePanel->PerformLayout();
+			this->tableLayoutPanel3->ResumeLayout(false);
+			this->tableLayoutPanel3->PerformLayout();
+			this->tableLayoutPanel4->ResumeLayout(false);
 			this->flowLayoutPanel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal0))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUDBlocksVal1))->EndInit();
@@ -1082,22 +1461,33 @@ namespace DemandPagingAlgorithm {
 			this->flowLayoutPanel1->PerformLayout();
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOProcess))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->NUPNOBlocks))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numOfProcessNUD))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numOfBlocksNUD))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
+		ref class intAr {
+		public:
+			int ind;
+		};
+
+		ref class boolAr {
+		public:
+			bool ind;
+		};
+
 		//FIFO Chosen
 	private: System::Void FIFO_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Choice->Text = "FIFO";
 		this->InElemPanel->Visible = true;
-		for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
+		for (int i = 0; i < this->numOfProcessNUD->Value; ++i) {
 			this->processLabel[i]->Visible = true;
 			this->processNUD[i]->Visible = true;
 		}
-		for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
+		for (int i = 0; i < this->numOfBlocksNUD->Value; ++i) {
 			this->blocksLabel[i]->Visible = true;
 			this->blocksNUD[i]->Visible = true;
 		}
@@ -1106,11 +1496,11 @@ namespace DemandPagingAlgorithm {
 	private: System::Void BestFit_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Choice->Text = "Best Fit";
 		this->InElemPanel->Visible = true;
-		for (int i = 0; i < this->NUPNOProcess->Value; ++i) {
+		for (int i = 0; i < this->numOfProcessNUD->Value; ++i) {
 			this->processLabel[i]->Visible = true;
 			this->processNUD[i]->Visible = true;
 		}
-		for (int i = 0; i < this->NUPNOBlocks->Value; ++i) {
+		for (int i = 0; i < this->numOfBlocksNUD->Value; ++i) {
 			this->blocksLabel[i]->Visible = true;
 			this->blocksNUD[i]->Visible = true;
 		}
@@ -1125,6 +1515,212 @@ namespace DemandPagingAlgorithm {
 			this->blocksLabel[i]->Visible = false;
 			this->blocksNUD[i]->Visible = false;
 		}
+	}
+	private: System::Void startAlgoButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		int numOfProcess = (int)this->numOfProcessNUD->Value;
+
+		this->processListTablePanel->RowCount = 2 + numOfProcess;
+		this->processListTablePanel->Size = System::Drawing::Size(750, 50 * this->processListTablePanel->RowCount);
+
+		this->processListValuesLabel = gcnew array<System::Windows::Forms::Label^>(numOfProcess);
+		this->processListLabel = gcnew array<System::Windows::Forms::Label^>(numOfProcess);
+		for (int i = 0; i < numOfProcess; ++i) {
+			this->processListLabel[i] = gcnew System::Windows::Forms::Label();
+			this->processListValuesLabel[i]= gcnew System::Windows::Forms::Label();
+			this->processListTablePanel->Controls->Add(this->processListLabel[i], 0, 2 + i);
+			this->processListTablePanel->Controls->Add(this->processListValuesLabel[i], 1, 2 + i);
+			this->processListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->processListLabel[i]->Text = "Process #" + (i + 1).ToString();
+			this->processListLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->processListLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->processListLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->processListLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->processListLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->processListLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+
+			this->processListValuesLabel[i]->Text = this->processNUD[i]->Value.ToString();
+			this->processListValuesLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->processListValuesLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->processListValuesLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->processListValuesLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->processListValuesLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->processListValuesLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+		}
+
+		int numOfBlocks = (int)this->numOfBlocksNUD->Value;
+		
+		this->memoryListTablePanel->RowCount = 2 + numOfBlocks;
+		this->memoryListTablePanel->Size = System::Drawing::Size(981, 50 * this->processListTablePanel->RowCount);
+		
+		String^ decision = this->Choice->Text;
+		if (decision == "FIFO") {
+			doFIFO();
+		}
+		else {
+			doBF();
+		}
+
+		this->resultPanel->Visible = true;
+	}
+
+
+	private: void doFIFO() {
+		int totalMemoryBlockSize = 0;
+		int totalProcessUsed = 0;
+		int processSize = (int)this->numOfProcessNUD->Value;
+		int blockSize = (int)this->numOfBlocksNUD->Value;
+		array<intAr^>^ process = gcnew array<intAr^>(processSize);
+		for (int i = 0; i < processSize; ++i) {
+			process[i] = gcnew intAr;
+			process[i]->ind = (int)this->processNUD[i]->Value;
+		}
+		array<intAr^>^ blocks = gcnew array<intAr^>(blockSize);
+		for (int i = 0; i < processSize; ++i) {
+			blocks[i] = gcnew intAr;
+			blocks[i]->ind = (int)this->blocksNUD[i]->Value;
+		}
+		array<intAr^>^ blocksIndex = gcnew array<intAr^>(blockSize);
+		for (int i = 0; i < blockSize; ++i) {
+			blocksIndex[i] = gcnew intAr;
+		}
+		array<boolAr^>^ blocksAvailable = gcnew array<boolAr^>(blockSize);
+		for (int i = 0; i < blockSize; ++i) {
+			blocksAvailable[i] = gcnew boolAr;
+			blocksAvailable[i]->ind = true;
+		}
+		for (int i = 0; i < processSize; ++i) {
+			for (int j = 0; j < blockSize; ++j) {
+				if (blocksAvailable[j]->ind) {
+					if (process[i]->ind <= blocks[j]->ind) {
+						blocksAvailable[j]->ind = false;
+						blocksIndex[j]->ind = i;
+						break;
+					}
+				}
+			}
+		}
+
+		this->memoryBlockSizeLabel = gcnew array<System::Windows::Forms::Label^>(blockSize);
+		this->processNumberLabel = gcnew array<System::Windows::Forms::Label^>(blockSize);
+		this->processSizeLabel = gcnew array<System::Windows::Forms::Label^>(blockSize);
+		this->statusLabel = gcnew array<System::Windows::Forms::Label^>(blockSize);
+		this->fragmentationLabel = gcnew array<System::Windows::Forms::Label^>(blockSize);
+		for (int i = 0; i < blockSize; ++i) {
+			totalMemoryBlockSize += blocks[i]->ind;
+			this->memoryListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+
+			//Memory Block
+			this->memoryBlockSizeLabel[i] = gcnew System::Windows::Forms::Label();
+			this->memoryListTablePanel->Controls->Add(this->memoryBlockSizeLabel[i], 0, 2 + i);
+			this->memoryBlockSizeLabel[i]->Text = "B" + (i + 1) + ": " + blocks[i]->ind;
+			this->memoryBlockSizeLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->memoryBlockSizeLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->memoryBlockSizeLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->memoryBlockSizeLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->memoryBlockSizeLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->memoryBlockSizeLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+
+			//Process Number
+			this->processNumberLabel[i] = gcnew System::Windows::Forms::Label();
+			this->memoryListTablePanel->Controls->Add(this->processNumberLabel[i], 1, 2 + i);
+			/*if (blocksAvailable[i]->ind) {
+				this->processNumberLabel[i]->Text = "None";
+			}
+			else {
+				this->processNumberLabel[i]->Text = "Process #" + (blocksIndex[i]->ind + 1);
+			}*/
+			this->processNumberLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->processNumberLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->processNumberLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->processNumberLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->processNumberLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->processNumberLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+
+			//Process Size
+			this->processSizeLabel[i] = gcnew System::Windows::Forms::Label();
+			this->memoryListTablePanel->Controls->Add(this->processSizeLabel[i], 2, 2 + i);
+			/*if (blocksAvailable[i]->ind) {
+				this->processSizeLabel[i]->Text = "None";
+			}
+			else {
+				this->processSizeLabel[i]->Text = process[blocksIndex[i]->ind]->ind + " ";
+			}*/
+			this->processSizeLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->processSizeLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->processSizeLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->processSizeLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->processSizeLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->processSizeLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+
+			//Status
+			this->statusLabel[i] = gcnew System::Windows::Forms::Label();
+			this->memoryListTablePanel->Controls->Add(this->statusLabel[i], 3, 2 + i);
+			/*if (blocksAvailable[i]->ind) {
+				this->statusLabel[i]->Text = "Free";
+				this->statusLabel[i]->ForeColor = System::Drawing::Color::Green;
+			}
+			else {
+				this->statusLabel[i]->Text = "Busy";
+				this->statusLabel[i]->ForeColor = System::Drawing::Color::Red;
+			}*/
+			this->statusLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->statusLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->statusLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->statusLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->statusLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->statusLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+			
+
+			//Fragmentation
+			this->fragmentationLabel[i] = gcnew System::Windows::Forms::Label();
+			this->memoryListTablePanel->Controls->Add(this->fragmentationLabel[i], 4, 2 + i);
+			/*if (blocksAvailable[i]->ind) {
+				this->fragmentationLabel[i]->Text = "None";
+			}
+			else {
+				this->fragmentationLabel[i]->Text = blocks[i]->ind - process[blocksIndex[i]->ind]->ind + " ";
+			}*/
+			this->fragmentationLabel[i]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)));
+			this->fragmentationLabel[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->fragmentationLabel[i]->Size = System::Drawing::Size(200, 50);
+			this->fragmentationLabel[i]->Margin = System::Windows::Forms::Padding(3);
+			this->fragmentationLabel[i]->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->fragmentationLabel[i]->BackColor = System::Drawing::SystemColors::Control;
+
+			//--Combined if else
+			if (blocksAvailable[i]->ind) {
+				this->processNumberLabel[i]->Text = "None";
+				this->processSizeLabel[i]->Text = "None";
+				this->statusLabel[i]->Text = "Free";
+				this->statusLabel[i]->ForeColor = System::Drawing::Color::Green;
+				this->fragmentationLabel[i]->Text = "None";
+
+			}
+			else {
+				totalProcessUsed += process[blocksIndex[i]->ind]->ind;
+				this->processNumberLabel[i]->Text = "Process #" + (blocksIndex[i]->ind + 1);
+				this->processSizeLabel[i]->Text = process[blocksIndex[i]->ind]->ind + " ";
+				this->statusLabel[i]->Text = "Busy";
+				this->statusLabel[i]->ForeColor = System::Drawing::Color::Red;
+				this->fragmentationLabel[i]->Text = blocks[i]->ind - process[blocksIndex[i]->ind]->ind + " ";
+			}
+		}
+		this->totalMemoryBlockSizeLabel->Text = totalMemoryBlockSize + " ";
+		this->totalProcessUsedLabel->Text = totalProcessUsed + " ";
+	}
+
+	private: void doBF() {
+
+	}
+
+	private: System::Void ResultToInput_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->resultPanel->Visible = false;
+	}
+	private: System::Void ResultToMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->resultPanel->Visible = false;
+		this->InElemPanel->Visible = false;
 	}
 	//Exit the Software
 	private: System::Void Exit_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1183,5 +1779,7 @@ namespace DemandPagingAlgorithm {
 		this->blocksNUD[8] = this->NUDBlocksVal8;
 		this->blocksNUD[9] = this->NUDBlocksVal9;
 	}
-	};
+
+
+};
 }
