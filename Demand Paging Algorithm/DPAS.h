@@ -1707,8 +1707,8 @@ private: System::Windows::Forms::Label^ label19;
 			this->label21->Size = System::Drawing::Size(464, 92);
 			this->label21->TabIndex = 1;
 			this->label21->Text = L"If there were any bugs, wrong calculations, wrong logic, and other errors within "
-				L"the software, the developers would like to apologize.\r\nAlso thank you for using "
-				L"the software!";
+				L"the software, the developers would like to apologize.\r\nAlso, thank you for using"
+				L" the software!";
 			// 
 			// label20
 			// 
