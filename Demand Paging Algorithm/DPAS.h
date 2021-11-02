@@ -164,6 +164,22 @@ private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel8;
 private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel9;
 private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel10;
 private: System::Windows::Forms::Label^ finalTitle;
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::Label^ label9;
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::Label^ label7;
+private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel11;
+private: System::Windows::Forms::Button^ creditsToMenu;
+private: System::Windows::Forms::Label^ label14;
+private: System::Windows::Forms::Label^ label13;
+private: System::Windows::Forms::Label^ label15;
+private: System::Windows::Forms::Label^ label12;
+private: System::Windows::Forms::Label^ label21;
+private: System::Windows::Forms::Label^ label20;
+private: System::Windows::Forms::Label^ label22;
+private: System::Windows::Forms::Label^ label18;
+private: System::Windows::Forms::Label^ label19;
 
 
 
@@ -186,6 +202,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(DPAS::typeid));
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->TitlePanel = (gcnew System::Windows::Forms::Label());
 			this->ChoicesPanel = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -278,6 +295,22 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->numOfBlocksNUD = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->creditsPanel = (gcnew System::Windows::Forms::Panel());
+			this->tableLayoutPanel11 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->creditsToMenu = (gcnew System::Windows::Forms::Button());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->ChoicesPanel->SuspendLayout();
 			this->InElemPanel->SuspendLayout();
@@ -319,6 +352,8 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->tableLayoutPanel7->SuspendLayout();
 			this->tableLayoutPanel8->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numOfBlocksNUD))->BeginInit();
+			this->creditsPanel->SuspendLayout();
+			this->tableLayoutPanel11->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -408,6 +443,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->Credits->TabIndex = 0;
 			this->Credits->Text = L"Credits";
 			this->Credits->UseVisualStyleBackColor = true;
+			this->Credits->Click += gcnew System::EventHandler(this, &DPAS::Credits_Click);
 			// 
 			// Exit
 			// 
@@ -496,7 +532,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->resultPanel->Controls->Add(this->tableLayoutPanel4);
 			this->resultPanel->Location = System::Drawing::Point(0, 0);
 			this->resultPanel->Name = L"resultPanel";
-			this->resultPanel->Size = System::Drawing::Size(984, 961);
+			this->resultPanel->Size = System::Drawing::Size(984, 958);
 			this->resultPanel->TabIndex = 8;
 			this->resultPanel->Visible = false;
 			// 
@@ -620,7 +656,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 				50)));
 			this->memoryListTablePanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
 				50)));
-			this->memoryListTablePanel->Size = System::Drawing::Size(944, 100);
+			this->memoryListTablePanel->Size = System::Drawing::Size(968, 100);
 			this->memoryListTablePanel->TabIndex = 1;
 			// 
 			// memoryListTitle
@@ -646,7 +682,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->blockNumberSizeTitle->Location = System::Drawing::Point(3, 53);
 			this->blockNumberSizeTitle->Margin = System::Windows::Forms::Padding(3);
 			this->blockNumberSizeTitle->Name = L"blockNumberSizeTitle";
-			this->blockNumberSizeTitle->Size = System::Drawing::Size(182, 44);
+			this->blockNumberSizeTitle->Size = System::Drawing::Size(187, 44);
 			this->blockNumberSizeTitle->TabIndex = 0;
 			this->blockNumberSizeTitle->Text = L"Block #:  Size";
 			this->blockNumberSizeTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -658,10 +694,10 @@ private: System::Windows::Forms::Label^ finalTitle;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->processNumberMemoryListTitle->AutoSize = true;
 			this->processNumberMemoryListTitle->BackColor = System::Drawing::SystemColors::Control;
-			this->processNumberMemoryListTitle->Location = System::Drawing::Point(191, 53);
+			this->processNumberMemoryListTitle->Location = System::Drawing::Point(196, 53);
 			this->processNumberMemoryListTitle->Margin = System::Windows::Forms::Padding(3);
 			this->processNumberMemoryListTitle->Name = L"processNumberMemoryListTitle";
-			this->processNumberMemoryListTitle->Size = System::Drawing::Size(182, 44);
+			this->processNumberMemoryListTitle->Size = System::Drawing::Size(187, 44);
 			this->processNumberMemoryListTitle->TabIndex = 0;
 			this->processNumberMemoryListTitle->Text = L"Process Number";
 			this->processNumberMemoryListTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -673,10 +709,10 @@ private: System::Windows::Forms::Label^ finalTitle;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->processSizeTitle->AutoSize = true;
 			this->processSizeTitle->BackColor = System::Drawing::SystemColors::Control;
-			this->processSizeTitle->Location = System::Drawing::Point(379, 53);
+			this->processSizeTitle->Location = System::Drawing::Point(389, 53);
 			this->processSizeTitle->Margin = System::Windows::Forms::Padding(3);
 			this->processSizeTitle->Name = L"processSizeTitle";
-			this->processSizeTitle->Size = System::Drawing::Size(182, 44);
+			this->processSizeTitle->Size = System::Drawing::Size(187, 44);
 			this->processSizeTitle->TabIndex = 0;
 			this->processSizeTitle->Text = L"Process Size";
 			this->processSizeTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -688,10 +724,10 @@ private: System::Windows::Forms::Label^ finalTitle;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->statusTitle->AutoSize = true;
 			this->statusTitle->BackColor = System::Drawing::SystemColors::Control;
-			this->statusTitle->Location = System::Drawing::Point(567, 53);
+			this->statusTitle->Location = System::Drawing::Point(582, 53);
 			this->statusTitle->Margin = System::Windows::Forms::Padding(3);
 			this->statusTitle->Name = L"statusTitle";
-			this->statusTitle->Size = System::Drawing::Size(182, 44);
+			this->statusTitle->Size = System::Drawing::Size(187, 44);
 			this->statusTitle->TabIndex = 0;
 			this->statusTitle->Text = L"Status";
 			this->statusTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -703,10 +739,10 @@ private: System::Windows::Forms::Label^ finalTitle;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->fragmentationTitle->AutoSize = true;
 			this->fragmentationTitle->BackColor = System::Drawing::SystemColors::Control;
-			this->fragmentationTitle->Location = System::Drawing::Point(755, 53);
+			this->fragmentationTitle->Location = System::Drawing::Point(775, 53);
 			this->fragmentationTitle->Margin = System::Windows::Forms::Padding(3);
 			this->fragmentationTitle->Name = L"fragmentationTitle";
-			this->fragmentationTitle->Size = System::Drawing::Size(186, 44);
+			this->fragmentationTitle->Size = System::Drawing::Size(190, 44);
 			this->fragmentationTitle->TabIndex = 0;
 			this->fragmentationTitle->Text = L"Fragmentation";
 			this->fragmentationTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -727,7 +763,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->tableLayoutPanel3->RowCount = 2;
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(975, 100);
+			this->tableLayoutPanel3->Size = System::Drawing::Size(968, 100);
 			this->tableLayoutPanel3->TabIndex = 0;
 			// 
 			// label16
@@ -738,7 +774,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->label16->AutoSize = true;
 			this->label16->Location = System::Drawing::Point(3, 0);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(385, 50);
+			this->label16->Size = System::Drawing::Size(382, 50);
 			this->label16->TabIndex = 0;
 			this->label16->Text = L"Total Memory Block Size: ";
 			this->label16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -751,7 +787,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->label17->AutoSize = true;
 			this->label17->Location = System::Drawing::Point(3, 50);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(385, 50);
+			this->label17->Size = System::Drawing::Size(382, 50);
 			this->label17->TabIndex = 0;
 			this->label17->Text = L"Total Process Used: ";
 			this->label17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -762,9 +798,9 @@ private: System::Windows::Forms::Label^ finalTitle;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->totalMemoryBlockSizeLabel->AutoSize = true;
-			this->totalMemoryBlockSizeLabel->Location = System::Drawing::Point(394, 0);
+			this->totalMemoryBlockSizeLabel->Location = System::Drawing::Point(391, 0);
 			this->totalMemoryBlockSizeLabel->Name = L"totalMemoryBlockSizeLabel";
-			this->totalMemoryBlockSizeLabel->Size = System::Drawing::Size(578, 50);
+			this->totalMemoryBlockSizeLabel->Size = System::Drawing::Size(574, 50);
 			this->totalMemoryBlockSizeLabel->TabIndex = 1;
 			this->totalMemoryBlockSizeLabel->Text = L"Value";
 			this->totalMemoryBlockSizeLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -775,9 +811,9 @@ private: System::Windows::Forms::Label^ finalTitle;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->totalProcessUsedLabel->AutoSize = true;
-			this->totalProcessUsedLabel->Location = System::Drawing::Point(394, 50);
+			this->totalProcessUsedLabel->Location = System::Drawing::Point(391, 50);
 			this->totalProcessUsedLabel->Name = L"totalProcessUsedLabel";
-			this->totalProcessUsedLabel->Size = System::Drawing::Size(578, 50);
+			this->totalProcessUsedLabel->Size = System::Drawing::Size(574, 50);
 			this->totalProcessUsedLabel->TabIndex = 1;
 			this->totalProcessUsedLabel->Text = L"Value";
 			this->totalProcessUsedLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -796,13 +832,13 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->tableLayoutPanel4->RowCount = 1;
 			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel4->Size = System::Drawing::Size(975, 87);
+			this->tableLayoutPanel4->Size = System::Drawing::Size(972, 87);
 			this->tableLayoutPanel4->TabIndex = 3;
 			// 
 			// ResultToInput
 			// 
 			this->ResultToInput->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->ResultToInput->Location = System::Drawing::Point(147, 3);
+			this->ResultToInput->Location = System::Drawing::Point(146, 3);
 			this->ResultToInput->Name = L"ResultToInput";
 			this->ResultToInput->Size = System::Drawing::Size(193, 81);
 			this->ResultToInput->TabIndex = 2;
@@ -813,7 +849,7 @@ private: System::Windows::Forms::Label^ finalTitle;
 			// ResultToMenu
 			// 
 			this->ResultToMenu->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->ResultToMenu->Location = System::Drawing::Point(634, 3);
+			this->ResultToMenu->Location = System::Drawing::Point(632, 3);
 			this->ResultToMenu->Name = L"ResultToMenu";
 			this->ResultToMenu->Size = System::Drawing::Size(193, 81);
 			this->ResultToMenu->TabIndex = 2;
@@ -1555,11 +1591,190 @@ private: System::Windows::Forms::Label^ finalTitle;
 			// 
 			// creditsPanel
 			// 
-			this->creditsPanel->Location = System::Drawing::Point(456, 803);
+			this->creditsPanel->AutoScroll = true;
+			this->creditsPanel->Controls->Add(this->tableLayoutPanel11);
+			this->creditsPanel->Controls->Add(this->label10);
+			this->creditsPanel->Controls->Add(this->label9);
+			this->creditsPanel->Controls->Add(this->label14);
+			this->creditsPanel->Controls->Add(this->label13);
+			this->creditsPanel->Controls->Add(this->label15);
+			this->creditsPanel->Controls->Add(this->label12);
+			this->creditsPanel->Controls->Add(this->label21);
+			this->creditsPanel->Controls->Add(this->label20);
+			this->creditsPanel->Controls->Add(this->label11);
+			this->creditsPanel->Controls->Add(this->label22);
+			this->creditsPanel->Controls->Add(this->label18);
+			this->creditsPanel->Controls->Add(this->label19);
+			this->creditsPanel->Controls->Add(this->label8);
+			this->creditsPanel->Controls->Add(this->label7);
+			this->creditsPanel->Location = System::Drawing::Point(0, 0);
 			this->creditsPanel->Name = L"creditsPanel";
-			this->creditsPanel->Size = System::Drawing::Size(224, 158);
+			this->creditsPanel->Size = System::Drawing::Size(984, 961);
 			this->creditsPanel->TabIndex = 8;
 			this->creditsPanel->Visible = false;
+			// 
+			// tableLayoutPanel11
+			// 
+			this->tableLayoutPanel11->ColumnCount = 1;
+			this->tableLayoutPanel11->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel11->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel11->Controls->Add(this->creditsToMenu, 0, 0);
+			this->tableLayoutPanel11->Location = System::Drawing::Point(0, 826);
+			this->tableLayoutPanel11->Name = L"tableLayoutPanel11";
+			this->tableLayoutPanel11->RowCount = 1;
+			this->tableLayoutPanel11->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel11->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel11->Size = System::Drawing::Size(984, 100);
+			this->tableLayoutPanel11->TabIndex = 3;
+			// 
+			// creditsToMenu
+			// 
+			this->creditsToMenu->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->creditsToMenu->Location = System::Drawing::Point(336, 3);
+			this->creditsToMenu->Name = L"creditsToMenu";
+			this->creditsToMenu->Size = System::Drawing::Size(311, 94);
+			this->creditsToMenu->TabIndex = 2;
+			this->creditsToMenu->Text = L"Return";
+			this->creditsToMenu->UseVisualStyleBackColor = true;
+			this->creditsToMenu->Click += gcnew System::EventHandler(this, &DPAS::creditsToMenu_Click);
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(138, 185);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(173, 23);
+			this->label10->TabIndex = 1;
+			this->label10->Text = L"Fermin, Raul Jr. N.";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(138, 162);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(202, 23);
+			this->label9->TabIndex = 1;
+			this->label9->Text = L"Pacleb, Nikko Adrian";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(543, 185);
+			this->label14->MaximumSize = System::Drawing::Size(500, 0);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(285, 23);
+			this->label14->TabIndex = 1;
+			this->label14->Text = L"Central Luzon State University";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(543, 162);
+			this->label13->MaximumSize = System::Drawing::Size(500, 0);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(285, 23);
+			this->label13->TabIndex = 1;
+			this->label13->Text = L"Central Luzon State University";
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(409, 185);
+			this->label15->MaximumSize = System::Drawing::Size(500, 0);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(88, 23);
+			this->label15->TabIndex = 1;
+			this->label15->Text = L"BSIT 2-1\r\n";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(409, 162);
+			this->label12->MaximumSize = System::Drawing::Size(500, 0);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(88, 23);
+			this->label12->TabIndex = 1;
+			this->label12->Text = L"BSIT 2-1\r\n";
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(138, 653);
+			this->label21->MaximumSize = System::Drawing::Size(500, 0);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(464, 92);
+			this->label21->TabIndex = 1;
+			this->label21->Text = L"If there were any bugs, wrong calculations, wrong logic, and other errors within "
+				L"the software, the developers would like to apologize.\r\nAlso thank you for using "
+				L"the software!";
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(138, 511);
+			this->label20->MaximumSize = System::Drawing::Size(500, 0);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(161, 23);
+			this->label20->TabIndex = 1;
+			this->label20->Text = L"November, 2021";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(138, 317);
+			this->label11->MaximumSize = System::Drawing::Size(500, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(496, 138);
+			this->label11->TabIndex = 1;
+			this->label11->Text = resources->GetString(L"label11.Text");
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(80, 616);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(289, 23);
+			this->label22->TabIndex = 1;
+			this->label22->Text = L"Message from the Developers: ";
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(80, 470);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(172, 23);
+			this->label18->TabIndex = 1;
+			this->label18->Text = L"Completion Date: ";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(80, 276);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(183, 23);
+			this->label19->TabIndex = 1;
+			this->label19->Text = L"More Information: ";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(80, 127);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(120, 23);
+			this->label8->TabIndex = 1;
+			this->label8->Text = L"Developers:";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Cambria", 20, System::Drawing::FontStyle::Bold));
+			this->label7->Location = System::Drawing::Point(78, 41);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(102, 32);
+			this->label7->TabIndex = 0;
+			this->label7->Text = L"Credits";
 			// 
 			// DPAS
 			// 
@@ -1629,6 +1844,9 @@ private: System::Windows::Forms::Label^ finalTitle;
 			this->tableLayoutPanel8->ResumeLayout(false);
 			this->tableLayoutPanel8->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numOfBlocksNUD))->EndInit();
+			this->creditsPanel->ResumeLayout(false);
+			this->creditsPanel->PerformLayout();
+			this->tableLayoutPanel11->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -2066,6 +2284,12 @@ private: System::Windows::Forms::Label^ finalTitle;
 		this->InElemPanel->Visible = false;
 		this->processListTablePanel->Controls->Clear();
 		this->memoryListTablePanel->Controls->Clear();
+	}
+	private: System::Void Credits_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->creditsPanel->Visible = true;
+	}
+	private: System::Void creditsToMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->creditsPanel->Visible = false;
 	}
 	//Exit the Software
 	private: System::Void Exit_Click(System::Object^ sender, System::EventArgs^ e) {
