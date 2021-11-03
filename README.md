@@ -1,9 +1,4 @@
 # Demand-Paging-Algorithm-Software
-## Installation
-1. Download the `"Demand Paging Algorithm.exe"` file.
-    ![image](https://user-images.githubusercontent.com/93676412/140173452-715b8259-0e15-489f-bbbd-cd031156fee6.png)
-2. Open the file (Installation not needed).
-
 ## Project Description
 * The software's purpose is to automatically compute the allocation of memory using the First Fit and Best Fit allocation method.
 * Following the sample provided in the lecture:
@@ -11,6 +6,11 @@
 ![image](https://user-images.githubusercontent.com/93676412/140177507-1604c1cb-7392-4670-b160-92fbaf94deaf.png)
 * Best Fit<br/>
 ![image](https://user-images.githubusercontent.com/93676412/140177621-751a5668-56a3-4843-9049-7ac4a4e210a1.png)
+
+## Installation
+1. Download the `"Demand Paging Algorithm.exe"` file.
+    ![image](https://user-images.githubusercontent.com/93676412/140173452-715b8259-0e15-489f-bbbd-cd031156fee6.png)
+2. Open the file (Installation not needed).
 
 ## How-To Use
 1. Press the method the user wants to use
