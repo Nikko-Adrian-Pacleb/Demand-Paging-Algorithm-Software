@@ -358,15 +358,15 @@ private: System::Windows::Forms::Label^ label19;
 			// 
 			// tableLayoutPanel1
 			// 
+			this->tableLayoutPanel1->AutoScroll = true;
 			this->tableLayoutPanel1->ColumnCount = 3;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				21.11554F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				78.88446F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				230)));
+				231)));
 			this->tableLayoutPanel1->Controls->Add(this->TitlePanel, 1, 0);
-			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
@@ -384,20 +384,20 @@ private: System::Windows::Forms::Label^ label19;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->TitlePanel->Location = System::Drawing::Point(162, 0);
 			this->TitlePanel->Name = L"TitlePanel";
-			this->TitlePanel->Size = System::Drawing::Size(588, 124);
+			this->TitlePanel->Size = System::Drawing::Size(587, 124);
 			this->TitlePanel->TabIndex = 0;
 			this->TitlePanel->Text = L"Demand Paging Algorithm";
 			this->TitlePanel->TextAlign = System::Drawing::ContentAlignment::BottomLeft;
 			// 
 			// ChoicesPanel
 			// 
+			this->ChoicesPanel->AutoScroll = true;
 			this->ChoicesPanel->ColumnCount = 1;
 			this->ChoicesPanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 100)));
 			this->ChoicesPanel->Controls->Add(this->FIFO, 0, 0);
 			this->ChoicesPanel->Controls->Add(this->BestFit, 0, 1);
 			this->ChoicesPanel->Controls->Add(this->Credits, 0, 4);
 			this->ChoicesPanel->Controls->Add(this->Exit, 0, 3);
-			this->ChoicesPanel->Dock = System::Windows::Forms::DockStyle::Left;
 			this->ChoicesPanel->Location = System::Drawing::Point(0, 124);
 			this->ChoicesPanel->Name = L"ChoicesPanel";
 			this->ChoicesPanel->RowCount = 5;
@@ -1779,6 +1779,7 @@ private: System::Windows::Forms::Label^ label19;
 			// DPAS
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(984, 961);
 			this->Controls->Add(this->InElemPanel);
 			this->Controls->Add(this->creditsPanel);
@@ -1786,9 +1787,9 @@ private: System::Windows::Forms::Label^ label19;
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Font = (gcnew System::Drawing::Font(L"Cambria", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"DPAS";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Demand Paging Algorithm Software";
 			this->Load += gcnew System::EventHandler(this, &DPAS::DPAS_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
